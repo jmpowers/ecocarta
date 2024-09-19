@@ -1,0 +1,86 @@
+---
+title: "San Jacinto Ecoregions"
+author: "[John Powers](http://sites.uci.edu/powers/)"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    self_contained: no
+    lib_dir: libs
+    code_folding: hide
+    toc: yes
+    toc_float: TRUE
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(sf)
+library(vegan)
+library(RColorBrewer)
+knitr::opts_chunk$set(comment="", cache=T, warning = F, message = F, fig.path = "images/")
+```
+
+# Load GBIF data
+
+```{r load_gbif}
+#San Jacinto Mountains research-grade iNaturalist observations
+#POLYGON((-117 33.5,-116.5 33.5,-116.5 34,-117 34,-117 33.5))
+#GBIF.org (19 September 2024) GBIF Occurrence Download  https://doi.org/10.15468/dl.25fxq8
+dat.all <- read_tsv("data/0022443-240906103802322.csv.gz")
+
+rare_cutoff <- 42 #drop rare species
+dat.common <- dat.all %>% 
+  filter(coordinateUncertaintyInMeters < 1000) %>% 
+  group_by(species) %>% filter(n()>rare_cutoff) %>% drop_na(species) %>% 
+  mutate(species=factor(species), species_int = as.integer(species)) %>% as.data.frame()
+
+dat.points <- dat.common %>% st_as_sf(coords = c("decimalLongitude", "decimalLatitude"), crs = "WGS84")
+plot(dat.points["phylum"])
+```
+
+# Draw hexagonal grid
+
+```{r hex}
+#make hexagonal grid
+hex_dim <- 10 #number of hexagons on each side
+hex.sfc <- dat.points %>% st_make_grid(n=c(hex_dim, hex_dim), square = F)
+hex <- hex.sfc %>% st_sf() %>% mutate(grid_id = 1:length(lengths(hex.sfc)))
+
+#assign points to cells
+dat.hex.cells <- st_intersects(hex, dat.points) 
+hex$n_obs <- lengths(dat.hex.cells) #count points in each cell
+
+#drop cells with few observations
+obs_cutoff <- 10
+cells.full <- which(hex$n_obs>obs_cutoff)
+hex.full <- hex[cells.full,]
+
+plot(hex.full["n_obs"])
+
+#tally number of each species in each cell
+dat.hex <- t(sapply(dat.hex.cells, function(x) table(dat.common[x,"species"])))
+rownames(dat.hex) <- hex$grid_id
+dat.hex.full <- dat.hex[cells.full,]
+```
+
+# k-Means clustering
+
+```{r kmeans}
+#assign clusters with k-means
+n_clusters <- 12
+pal <- brewer.pal(n_clusters, "Set3")
+hex.full$cluster <- dat.hex.full %>% decostand("hellinger") %>% kmeans(n_clusters) %>% `$`(cluster) %>% factor()
+plot(hex.full["cluster"], key.pos=4)
+```
+
+# NMDS ordination
+
+```{r nmds}
+nmds <- metaMDS(dat.hex.full, trace=F)
+par(bg="grey40")
+plot(nmds, type="n")
+text(nmds, display="species", cex=0.6)
+text(nmds, display="sites", col=pal[hex.full$cluster])
+```
+
