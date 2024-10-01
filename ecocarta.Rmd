@@ -18,7 +18,10 @@ library(tidyverse)
 library(sf)
 library(vegan)
 library(RColorBrewer)
-knitr::opts_chunk$set(comment="", cache=T, warning = F, message = F, fig.path = "images/")
+library(rayshader)
+knitr::opts_chunk$set(comment="", cache=T, warning = F, message = F, fig.path = "images/",
+                      dev="svglite", dev.args=list(fix_text_size=FALSE),
+                      fig.height=6, fig.width=4)
 ```
 
 # Load GBIF data
@@ -127,6 +130,25 @@ tri.full$cluster <- factor(tri.km$cluster, levels=order(t(tri.km.nmds$points)))
 ggplot(tri.full, aes(fill=as.integer(cluster))) + geom_sf(linewidth=1) + 
   theme_void() + scale_fill_gradientn(colours = terrain.colors(n_clusters), guide = "none")
 ```
+
+# Shade with rays
+
+```{r rayshading, eval=F}
+hex.full.df <- st_coordinates(hex.full) %>% as_tibble() %>%
+  left_join(st_drop_geometry(hex.full)  %>% as_tibble() %>% mutate(L2=as.integer(as.factor(grid_id)))) %>% 
+  mutate(cluster = n_clusters - as.integer(cluster)) 
+(hex.terrain <- ggplot(hex.full.df) + 
+    geom_polygon(aes(x=X, y=Y, group=grid_id, fill=cluster), color="grey40") + 
+    scale_y_continuous(expand =  expansion(mult=c(0.2,0.05)))+ scale_x_continuous(expand =  expansion(mult=c(0.05,0.2)))+
+    theme_void() +theme(panel.background = element_rect(fill="white", color="white")) + 
+    scale_fill_gradientn("", colours = rev(terrain.colors(n_clusters))))
+
+plot_gg(hex.terrain, multicore=T, theta=0, phi=80, zoom=0.6,
+        sunangle=320, shadow_intensity=0.3, 
+        width=3, height=3*(11/9), windowsize=c(900,1100))# sunaltitude = 70,
+render_snapshot()
+```
+
 
 # NMDS ordination
 

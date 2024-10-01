@@ -11,7 +11,7 @@
 
 <meta name="author" content="John Powers" />
 
-<meta name="date" content="2024-09-19" />
+<meta name="date" content="2024-09-25" />
 
 <title>San Jacinto Ecoregions</title>
 
@@ -253,7 +253,7 @@ div.tocify {
 <h1 class="title toc-ignore">San Jacinto Ecoregions</h1>
 <h4 class="author"><a href="http://sites.uci.edu/powers/">John
 Powers</a></h4>
-<h4 class="date">2024-09-19</h4>
+<h4 class="date">2024-09-25</h4>
 
 </div>
 
@@ -262,7 +262,9 @@ Powers</a></h4>
 library(sf)
 library(vegan)
 library(RColorBrewer)
-knitr::opts_chunk$set(comment=&quot;&quot;, cache=T, warning = F, message = F, fig.path = &quot;images/&quot;)</code></pre>
+knitr::opts_chunk$set(comment=&quot;&quot;, cache=T, warning = F, message = F, fig.path = &quot;images/&quot;,
+                      dev=&quot;svglite&quot;, dev.args=list(fix_text_size=FALSE),
+                      fig.height=6, fig.width=4)</code></pre>
 <div id="load-gbif-data" class="section level1">
 <h1>Load GBIF data</h1>
 <pre class="r"><code>#San Jacinto Mountains research-grade iNaturalist observations
@@ -279,7 +281,7 @@ dat.common &lt;- dat.all %&gt;%
 dat.points &lt;- dat.common %&gt;% st_as_sf(coords = c(&quot;decimalLongitude&quot;, &quot;decimalLatitude&quot;), crs = &quot;WGS84&quot;)
 ggplot(dat.points, aes(color=order)) + geom_sf() + theme_void() + guides(color=&quot;none&quot;) +
     theme(panel.background = element_rect(fill=&quot;black&quot;))</code></pre>
-<p><img src="images/load_gbif-1.png" width="672" /></p>
+<p><img src="images/load_gbif-1.svg" width="384" /></p>
 <pre class="r"><code>group_by_cell &lt;- function(points, grid, min_obs=0) {
   #assign points to cells
   dat.grid.cells &lt;- st_intersects(grid, points) 
@@ -310,7 +312,7 @@ hex.full &lt;- hex.obj$grid
 ggplot(hex.full, aes(fill=n_obs)) + geom_sf(linewidth=2) + 
   theme_void() + scale_fill_viridis_c(option=&quot;magma&quot;, guide=&quot;none&quot;) + 
   theme(panel.background = element_rect(fill=&quot;black&quot;))</code></pre>
-<p><img src="images/hex-1.png" width="672" /></p>
+<p><img src="images/hex-1.svg" width="384" /></p>
 </div>
 <div id="draw-voronoi-triangles" class="section level1">
 <h1>Draw Voronoi triangles</h1>
@@ -330,7 +332,7 @@ tri.full &lt;- tri.obj$grid
 ggplot(tri.full, aes(fill=n_obs)) + geom_sf(linewidth=2) + 
   theme_void() + scale_fill_viridis_c(option=&quot;magma&quot;, guide=&quot;none&quot;) + 
   theme(panel.background = element_rect(fill=&quot;black&quot;))</code></pre>
-<p><img src="images/voronoi-1.png" width="672" /></p>
+<p><img src="images/voronoi-1.svg" width="384" /></p>
 </div>
 <div id="k-means-clustering" class="section level1">
 <h1>k-Means clustering</h1>
@@ -342,12 +344,12 @@ set.seed(1)
 hex.km &lt;- dat.hex %&gt;% decostand(&quot;hellinger&quot;) %&gt;% kmeans(n_clusters)
 ggplot(hex.full, aes(fill=factor(hex.km$cluster))) + geom_sf(linewidth=1) + 
   theme_void() + scale_fill_manual(values=pal, guide=&quot;none&quot;)</code></pre>
-<p><img src="images/kmeans-1.png" width="672" /></p>
+<p><img src="images/kmeans-1.svg" width="384" /></p>
 <pre class="r"><code>set.seed(2)
 tri.km &lt;-  dat.tri %&gt;% decostand(&quot;hellinger&quot;) %&gt;% kmeans(n_clusters)
 ggplot(tri.full, aes(fill=factor(tri.km$cluster))) + geom_sf(linewidth=1) + 
   theme_void() + scale_fill_manual(values=pal, guide=&quot;none&quot;)</code></pre>
-<p><img src="images/kmeans-2.png" width="672" /></p>
+<p><img src="images/kmeans-2.svg" width="384" /></p>
 </div>
 <div id="arrange-clusters-in-gradient" class="section level1">
 <h1>Arrange clusters in gradient</h1>
@@ -355,12 +357,12 @@ ggplot(tri.full, aes(fill=factor(tri.km$cluster))) + geom_sf(linewidth=1) +
 hex.full$cluster &lt;- factor(hex.km$cluster, levels=order(-t(hex.km.nmds$points)))
 ggplot(hex.full, aes(fill=as.integer(cluster))) + geom_sf(linewidth=1) + 
   theme_void() + scale_fill_gradientn(colours = terrain.colors(n_clusters), guide = &quot;none&quot;)</code></pre>
-<p><img src="images/gradient-1.png" width="672" /></p>
+<p><img src="images/gradient-1.svg" width="384" /></p>
 <pre class="r"><code>tri.km.nmds &lt;- metaMDS(tri.km$centers, k=1, trace=F)
 tri.full$cluster &lt;- factor(tri.km$cluster, levels=order(t(tri.km.nmds$points)))
 ggplot(tri.full, aes(fill=as.integer(cluster))) + geom_sf(linewidth=1) + 
   theme_void() + scale_fill_gradientn(colours = terrain.colors(n_clusters), guide = &quot;none&quot;)</code></pre>
-<p><img src="images/gradient-2.png" width="672" /></p>
+<p><img src="images/gradient-2.svg" width="384" /></p>
 </div>
 <div id="nmds-ordination" class="section level1">
 <h1>NMDS ordination</h1>
@@ -373,9 +375,9 @@ ggplot(tri.full, aes(fill=as.integer(cluster))) + geom_sf(linewidth=1) +
   par(bg=&quot;white&quot;)
 }
 plot_nmds(dat.hex, hex.full)</code></pre>
-<p><img src="images/nmds-1.png" width="672" /></p>
+<p><img src="images/nmds-1.svg" width="384" /></p>
 <pre class="r"><code>plot_nmds(dat.tri, tri.full)</code></pre>
-<p><img src="images/nmds-2.png" width="672" /></p>
+<p><img src="images/nmds-2.svg" width="384" /></p>
 </div>
 
 
