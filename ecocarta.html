@@ -11,7 +11,7 @@
 
 <meta name="author" content="John Powers" />
 
-<meta name="date" content="2024-09-25" />
+<meta name="date" content="2024-10-28" />
 
 <title>San Jacinto Ecoregions</title>
 
@@ -253,7 +253,7 @@ div.tocify {
 <h1 class="title toc-ignore">San Jacinto Ecoregions</h1>
 <h4 class="author"><a href="http://sites.uci.edu/powers/">John
 Powers</a></h4>
-<h4 class="date">2024-09-25</h4>
+<h4 class="date">2024-10-28</h4>
 
 </div>
 
@@ -262,6 +262,7 @@ Powers</a></h4>
 library(sf)
 library(vegan)
 library(RColorBrewer)
+library(rayshader)
 knitr::opts_chunk$set(comment=&quot;&quot;, cache=T, warning = F, message = F, fig.path = &quot;images/&quot;,
                       dev=&quot;svglite&quot;, dev.args=list(fix_text_size=FALSE),
                       fig.height=6, fig.width=4)</code></pre>
@@ -363,6 +364,22 @@ tri.full$cluster &lt;- factor(tri.km$cluster, levels=order(t(tri.km.nmds$points)
 ggplot(tri.full, aes(fill=as.integer(cluster))) + geom_sf(linewidth=1) + 
   theme_void() + scale_fill_gradientn(colours = terrain.colors(n_clusters), guide = &quot;none&quot;)</code></pre>
 <p><img src="images/gradient-2.svg" width="384" /></p>
+</div>
+<div id="shade-with-rays" class="section level1">
+<h1>Shade with rays</h1>
+<pre class="r"><code>hex.full.df &lt;- st_coordinates(hex.full) %&gt;% as_tibble() %&gt;%
+  left_join(st_drop_geometry(hex.full)  %&gt;% as_tibble() %&gt;% mutate(L2=as.integer(as.factor(grid_id)))) %&gt;% 
+  mutate(cluster = n_clusters - as.integer(cluster)) 
+(hex.terrain &lt;- ggplot(hex.full.df) + 
+    geom_polygon(aes(x=X, y=Y, group=grid_id, fill=cluster), color=&quot;grey40&quot;) + 
+    scale_y_continuous(expand =  expansion(mult=c(0.2,0.05)))+ scale_x_continuous(expand =  expansion(mult=c(0.05,0.2)))+
+    theme_void() +theme(panel.background = element_rect(fill=&quot;white&quot;, color=&quot;white&quot;)) + 
+    scale_fill_gradientn(&quot;&quot;, colours = rev(terrain.colors(n_clusters))))
+
+plot_gg(hex.terrain, multicore=T, theta=0, phi=80, zoom=0.6,
+        sunangle=320, shadow_intensity=0.3, 
+        width=3, height=3*(11/9), windowsize=c(900,1100))# sunaltitude = 70,
+render_snapshot()</code></pre>
 </div>
 <div id="nmds-ordination" class="section level1">
 <h1>NMDS ordination</h1>
