@@ -11,7 +11,7 @@
 
 <meta name="author" content="John Powers" />
 
-<meta name="date" content="2024-10-28" />
+<meta name="date" content="2024-10-29" />
 
 <title>Johnson Creek Ecoregions</title>
 
@@ -253,7 +253,7 @@ div.tocify {
 <h1 class="title toc-ignore">Johnson Creek Ecoregions</h1>
 <h4 class="author"><a href="http://sites.uci.edu/powers/">John
 Powers</a></h4>
-<h4 class="date">2024-10-28</h4>
+<h4 class="date">2024-10-29</h4>
 
 </div>
 
@@ -266,19 +266,28 @@ library(viridisLite)
 knitr::opts_chunk$set(comment=&quot;&quot;, cache=T, warning = F, message = F, fig.path = &quot;images-jc/&quot;,
                       dev=&quot;svglite&quot;, dev.args=list(fix_text_size=FALSE),
                       fig.height=3, fig.width=8)</code></pre>
-<div id="load-gbif-data" class="section level1">
-<h1>Load GBIF data</h1>
-<p>Download research-grade iNaturalist observations from <a
-href="https://doi.org/10.15468/dl.ph88g7">GBIF as of 19 September
-2024</a>. Then crop to the watershed boundary and show observations by
-kingdom. You can see clusters for Crystal Springs, Foster Floodplain,
-and Powell Butte.</p>
-<pre class="r"><code>#Portland area
-#box &lt;- st_as_sfc(&quot;POLYGON((-122.9 45.3,-122 45.3,-122 45.8,-122.9 45.8,-122.9 45.3))&quot;) %&gt;% st_set_crs(&quot;WGS84&quot;)
-#Johnson Creek watershed boundary from iNaturalist place
-box &lt;- st_read(&quot;data/johnsoncreek-inat-154205.kml&quot;, quiet=T)
+<div id="load-map-and-biodiversity-data" class="section level1">
+<h1>Load map and biodiversity data</h1>
+<p>Download watershed boundary from iNaturalist place and stream line
+from OpenStreetMap. Download research-grade iNaturalist observations
+from <a href="https://doi.org/10.15468/dl.ph88g7">GBIF as of 19
+September 2024</a>. Then crop to the watershed boundary and show
+observations by kingdom. You can see clusters for Crystal Springs,
+Foster Floodplain, and Powell Butte.</p>
+<pre class="r"><code>#Portland area for GBIF download
+box &lt;- st_as_sfc(&quot;POLYGON((-122.9 45.3,-122 45.3,-122 45.8,-122.9 45.8,-122.9 45.3))&quot;) %&gt;% st_set_crs(&quot;WGS84&quot;)
 
-dat.all &lt;- read_tsv(&quot;data/0023880-240906103802322.csv.gz&quot;)
+#Johnson Creek watershed boundary from iNaturalist place
+watershed &lt;- st_read(&quot;data/johnsoncreek-inat-154205.kml&quot;)
+
+# Johnson Creek stream line from OpenStreetMap
+# library(osmdata)
+# opq(bbox = st_bbox(watershed)) %&gt;%
+#   add_osm_feature(key = &quot;waterway&quot;, value = &quot;stream&quot;) %&gt;%
+#   osmdata_sf() %&gt;% `$`(osm_lines) %&gt;% filter(name==&quot;Johnson Creek&quot;) %&gt;% 
+#   st_write(creek, &quot;data/johnsoncreek_osm.kml&quot;)
+creek &lt;- st_read(&quot;data/johnsoncreek_osm.kml&quot;)</code></pre>
+<pre class="r"><code>dat.all &lt;- read_tsv(&quot;data/0023880-240906103802322.csv.gz&quot;)
 
 rare_cutoff &lt;- 100 #drop rare species
 dat.common &lt;- dat.all %&gt;% 
@@ -287,8 +296,10 @@ dat.common &lt;- dat.all %&gt;%
   mutate(species=factor(species), species_int = as.integer(species)) %&gt;% as.data.frame()
 
 dat.points &lt;- dat.common %&gt;% st_as_sf(coords = c(&quot;decimalLongitude&quot;, &quot;decimalLatitude&quot;), crs = &quot;WGS84&quot;) %&gt;% 
-  st_intersection(box)
-ggplot() + geom_sf(data=box, fill=&quot;brown&quot;, color=&quot;brown&quot;) + 
+  st_intersection(watershed)
+
+ggplot() + geom_sf(data=watershed, fill=&quot;forestgreen&quot;, color=&quot;forestgreen&quot;) + 
+  geom_sf(data=creek, color=&quot;blue&quot;, linewidth=2)+
   geom_sf(data=dat.points, aes(color=kingdom), size=0.5) + theme_void() + 
   theme(legend.position = &quot;top&quot;, plot.background = element_rect(fill=&quot;black&quot;), legend.text=element_text(color=&quot;grey&quot;)) +
   scale_color_brewer(&quot;&quot;,palette = &quot;Paired&quot;, labels=c(Animalia=&quot;animal&quot;, Plantae=&quot;vegetable&quot;, Fungi=&quot;fungus&quot;),
@@ -323,8 +334,8 @@ hex_min_obs &lt;- 20 #minimum number of observations allowed in cell
 hex.obj &lt;- group_by_cell(dat.points, hex, min_obs=hex_min_obs)
 dat.hex &lt;- hex.obj$data
 hex.full &lt;- hex.obj$grid
-ggplot() +  geom_sf(data=box, fill=&quot;grey20&quot;)+
-  geom_sf(data=hex.full, aes(fill=n_obs), linewidth=2) + 
+ggplot() +  geom_sf(data=watershed, fill=&quot;grey20&quot;, color=&quot;grey20&quot;)+
+  geom_sf(data=hex.full, aes(fill=n_obs), linewidth=2, color=&quot;grey50&quot;) + 
   theme_void() + scale_fill_viridis_c(&quot;Obs&quot;, option=&quot;magma&quot;) + 
   theme(panel.background = element_rect(fill=&quot;black&quot;))</code></pre>
 <p><img src="images-jc/hex-1.svg" width="768" /></p>
@@ -343,13 +354,14 @@ dat.sample &lt;- sample_n(dat.points, n_seeds)
 tri &lt;- dat.sample %&gt;% st_geometry() %&gt;% do.call(c, .) %&gt;% st_voronoi() %&gt;% 
   st_collection_extract() %&gt;% st_set_crs(&quot;WGS84&quot;) %&gt;% st_sf() %&gt;%
   mutate(grid_id = 1:nrow(.)) %&gt;%
-  st_intersection(box)
+  st_intersection(watershed)
 
 tri.obj &lt;- group_by_cell(dat.points, tri, min_obs=10)
 dat.tri &lt;- tri.obj$data
 tri.full &lt;- tri.obj$grid
 
-ggplot(tri.full, aes(fill=n_obs)) + geom_sf(linewidth=0.5) + 
+ggplot() + geom_sf(data=tri.full, aes(fill=n_obs), linewidth=0.5) + 
+  geom_sf(data=creek, color=&quot;black&quot;, linewidth=2, alpha=0.6)+
   theme_void() + scale_fill_viridis_c(&quot;Obs&quot;, option=&quot;magma&quot;, limits=c(0,NA)) + 
   theme(panel.background = element_rect(fill=&quot;black&quot;))</code></pre>
 <p><img src="images-jc/voronoi-1.svg" width="768" /></p>
@@ -358,19 +370,20 @@ ggplot(tri.full, aes(fill=n_obs)) + geom_sf(linewidth=0.5) +
 <h1>k-Means clustering</h1>
 <p>Look at the observed community composition in each cell, defined as
 the relative abundance of each taxon. Assign each cell to a cluster of
-similar communities using the k-means algorithm. The number of clusters
-can be set. Each cluster is assigned a color.</p>
-<pre class="r"><code>n_clusters &lt;- 8
+similar communities using the k-means algorithm. Set the number of
+clusters and assign each a color.</p>
+<pre class="r"><code>n_clusters &lt;- 5
 pal &lt;- c(brewer.pal(8, &quot;Set2&quot;), brewer.pal(12, &quot;Set3&quot;))[1:n_clusters] %&gt;% set_names(1:n_clusters)
 
 # set.seed(1)
 # hex.km &lt;- dat.hex %&gt;% decostand(&quot;hellinger&quot;) %&gt;% kmeans(n_clusters)
-# ggplot(hex.full, aes(fill=factor(hex.km$cluster))) + geom_sf(linewidth=1) + 
+# ggplot(hex.full, aes(fill=factor(hex.km$cluster))) + geom_sf(linewidth=1) +
 #   theme_void() + scale_fill_manual(values=pal, guide=&quot;none&quot;)
 
 set.seed(2)
 tri.km &lt;-  dat.tri %&gt;% decostand(&quot;hellinger&quot;) %&gt;% kmeans(n_clusters)
-ggplot(tri.full, aes(fill=factor(tri.km$cluster))) + geom_sf(linewidth=0.5) + 
+ggplot() + geom_sf(data=tri.full, aes(fill=factor(tri.km$cluster)), linewidth=0.5) + 
+  geom_sf(data=creek, color=&quot;black&quot;, linewidth=0.5)+
   theme_void() + scale_fill_manual(values=pal, guide=&quot;none&quot;)</code></pre>
 <p><img src="images-jc/kmeans-1.svg" width="768" /></p>
 </div>
@@ -384,33 +397,41 @@ cluster, which orders clusters along the number line. Then map the
 ordered cluster number to a color scale.</p>
 <pre class="r"><code># hex.km.nmds &lt;- metaMDS(hex.km$centers, k=1, trace=F)
 # hex.full$cluster &lt;- factor(hex.km$cluster, levels=order(-t(hex.km.nmds$points)))
-# ggplot(hex.full, aes(fill=as.integer(cluster))) + geom_sf(linewidth=1) + 
+# ggplot(hex.full, aes(fill=as.integer(cluster))) + geom_sf(linewidth=1) +
 #   theme_void() + scale_fill_viridis_c(&quot;Cluster&quot;, option=&quot;mako&quot;)
 
 tri.km.nmds &lt;- metaMDS(tri.km$centers, k=1, trace=F)
 tri.full$cluster &lt;- factor(tri.km$cluster, levels=order(t(tri.km.nmds$points)))
-ggplot(tri.full, aes(fill=as.integer(cluster))) + geom_sf(linewidth=0.5) + 
+ggplot() + geom_sf(data = tri.full, aes(fill=as.integer(cluster)), linewidth=0.5) + 
+  geom_sf(data=creek, color=&quot;black&quot;, linewidth=0.5)+
   theme_void() + scale_fill_viridis_c(&quot;Cluster&quot;, option=&quot;mako&quot;)</code></pre>
 <p><img src="images-jc/gradient-1.svg" width="768" /></p>
 </div>
 <div id="nmds-ordination" class="section level1">
 <h1>NMDS ordination</h1>
 <p>To visualize the similarity between communities in each voronoi cell,
-run an NMDS ordination. Each point represents a cell, with cell of
+run an NMDS ordination. Each point represents a cell, with cells of
 similar communities clustering together. The colors for each cluster are
-the same as above. Selected species are positioned near the cells where
-they are most common.</p>
-<pre class="r"><code>plot_nmds &lt;- function(data, grid) {
+the same as above. Common species are labeled near the cells where they
+are most observed and colored by their taxonomic order. The communities
+are broadly organized by both vertebrates and plants.</p>
+<pre class="r"><code>plot_nmds &lt;- function(data, grid, min_to_show) {
   nmds &lt;- metaMDS(data, trace=F)
-  par(bg=&quot;grey20&quot;, mar=c(0,0,0,0))
+  specs &lt;- tibble(species = colnames(data), n = colSums(data), show = n&gt;min_to_show) %&gt;%  
+    left_join(dat.points %&gt;% as.data.frame %&gt;% count(species, phylum, name=&quot;n_total&quot;)) %&gt;% 
+    mutate(phylum = factor(phylum))
+  phylum_pal &lt;- brewer.pal(nlevels(specs$phylum), &quot;Set2&quot;)
+  
+  par(bg=&quot;grey30&quot;, mar=c(0,0,0,0))
   plot(nmds, type=&quot;n&quot;, axes=F, ann=F)
-  species.show &lt;- colSums(data)&gt;mean(colSums(data)*1.5)
   points(nmds, display=&quot;sites&quot;, col=mako(n_clusters)[grid$cluster], pch=19)
-  text(nmds, display=&quot;species&quot;, cex=0.6, col=ifelse(species.show, &quot;grey60&quot;, alpha(&quot;black&quot;,0)))
+  text(nmds, display=&quot;species&quot;, cex=0.7, 
+       col=if_else(specs$show, phylum_pal[as.integer(specs$phylum)], alpha(&quot;black&quot;,0)))
+  legend(&quot;topleft&quot;, levels(specs$phylum), fill=phylum_pal, bty=&quot;n&quot;, text.col=&quot;white&quot;)
   par(bg=&quot;white&quot;)
 }
-# plot_nmds(dat.hex, hex.full)
-plot_nmds(dat.tri, tri.full)</code></pre>
+#plot_nmds(dat.hex, hex.full, 40)
+plot_nmds(dat.tri, tri.full, 40)</code></pre>
 <p><img src="images-jc/nmds-1.svg" width="768" /></p>
 </div>
 
