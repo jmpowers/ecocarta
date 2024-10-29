@@ -1,5 +1,5 @@
-"place","rare_cutoff","hex_dim","n_seeds","voroni_seed","n_clusters","file","citation","boundary"
-"San Jacinto Mountains",42,10,144,9,15,"0022443-240906103802322","GBIF.org (19 September 2024) GBIF Occurrence Download  https://doi.org/10.15468/dl.25fxq8","POLYGON((-117 33.5,-116.5 33.5,-116.5 34,-117 34,-117 33.5))"
-"Southern Oregon",10,10,144,9,8,"0023854-240906103802322","GBIF.org (19 September 2024) GBIF Occurrence Download  https://doi.org/10.15468/dl.82jsxk","POLYGON((-123.6 43,-123 43,-123 43.5,-123.6 43.5,-123.6 43))"
-"Portland, Oregon",100,20,144,9,15,"0023880-240906103802322","GBIF.org (19 September 2024) GBIF Occurrence Download https://doi.org/10.15468/dl.ph88g7"," POLYGON((-122.9 45.3,-122 45.3,-122 45.8,-122.9 45.8,-122.9 45.3))"
-"Southern Rocky Mountains",100,30,144,9,20,"0023895-240906103802322","GBIF.org (19 September 2024) GBIF Occurrence Download https://doi.org/10.15468/dl.zqvf4j","POLYGON((-108.5 36.5,-105.3 36.5,-105.3 41.6,-108.5 41.6,-108.5 36.5))"
+place,rare_cutoff,hex_dim,n_seeds,voroni_seed,n_clusters,file,citation,boundary
+San Jacinto Mountains,42,10,144,9,15,0022443-240906103802322,GBIF.org (19 September 2024) GBIF Occurrence Download  https://doi.org/10.15468/dl.25fxq8,"POLYGON((-117 33.5,-116.5 33.5,-116.5 34,-117 34,-117 33.5))"
+Southern Oregon,10,10,144,9,8,0023854-240906103802322,GBIF.org (19 September 2024) GBIF Occurrence Download  https://doi.org/10.15468/dl.82jsxk,"POLYGON((-123.6 43,-123 43,-123 43.5,-123.6 43.5,-123.6 43))"
+"Portland, Oregon",100,20,144,9,15,0023880-240906103802322,GBIF.org (19 September 2024) GBIF Occurrence Download https://doi.org/10.15468/dl.ph88g7,"POLYGON((-122.9 45.3,-122 45.3,-122 45.8,-122.9 45.8,-122.9 45.3))"
+Southern Rocky Mountains,100,30,144,9,20,0023895-240906103802322,GBIF.org (19 September 2024) GBIF Occurrence Download https://doi.org/10.15468/dl.zqvf4j,"POLYGON((-108.5 36.5,-105.3 36.5,-105.3 41.6,-108.5 41.6,-108.5 36.5))"
