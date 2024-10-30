@@ -112,8 +112,8 @@ ggplot() +  geom_sf(data=watershed, fill="black", color="black")+
 The number of observations in the hex grid is too uneven. Instead, try to divide the area into polygons of more even populations. First, sample some random seed observations - dense observations areas should have more sampled points. Then, define the region that is closest to each point, makig a Voronoi diagram. The relative variation in observation number per cell is now half that of the hex grid.
 
 ```{r voronoi}
-n_seeds <- 100
-set.seed(3)
+n_seeds <- 70
+set.seed(1)
 dat.sample <- sample_n(dat.points, n_seeds)
 tri <- dat.sample %>% st_geometry() %>% do.call(c, .) %>% st_voronoi() %>% 
   st_collection_extract() %>% st_set_crs("WGS84") %>% st_sf() %>%

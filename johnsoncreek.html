@@ -279,8 +279,8 @@ sample some random seed observations - dense observations areas should
 have more sampled points. Then, define the region that is closest to
 each point, makig a Voronoi diagram. The relative variation in
 observation number per cell is now half that of the hex grid.</p>
-<pre class="r"><code>n_seeds &lt;- 100
-set.seed(3)
+<pre class="r"><code>n_seeds &lt;- 70
+set.seed(1)
 dat.sample &lt;- sample_n(dat.points, n_seeds)
 tri &lt;- dat.sample %&gt;% st_geometry() %&gt;% do.call(c, .) %&gt;% st_voronoi() %&gt;% 
   st_collection_extract() %&gt;% st_set_crs(&quot;WGS84&quot;) %&gt;% st_sf() %&gt;%
