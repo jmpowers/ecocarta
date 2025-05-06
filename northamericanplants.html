@@ -11,7 +11,7 @@
 
 <meta name="author" content="John Powers" />
 
-<meta name="date" content="2025-04-24" />
+<meta name="date" content="2025-05-05" />
 
 <title>North American Plant Ecoregions</title>
 
@@ -177,7 +177,7 @@ pre code {
 <h1 class="title toc-ignore">North American Plant Ecoregions</h1>
 <h4 class="author"><a href="http://sites.uci.edu/powers/">John
 Powers</a></h4>
-<h4 class="date">2025-04-24</h4>
+<h4 class="date">2025-05-05</h4>
 
 </div>
 
@@ -264,7 +264,7 @@ sample some random seed observations - dense observations areas should
 have more sampled points. Then, define the region that is closest to
 each point, making a Voronoi diagram. The relative variation in
 observation number per cell is now half that of the hex grid.</p>
-<pre class="r"><code>n_seeds &lt;- 200
+<pre class="r"><code>n_seeds &lt;- 100
 set.seed(1)
 dat.sample &lt;- sample_n(dat.points, n_seeds)
 tri &lt;- dat.sample %&gt;% st_geometry() %&gt;% do.call(c, .) %&gt;% st_voronoi() %&gt;% 
@@ -333,6 +333,51 @@ order.</p>
 }
 plot_nmds(dat.tri, tri.km, min_to_show=2000)</code></pre>
 <p><img src="images-nap/nmds-1.svg" width="1800px" /></p>
+</div>
+<div id="compare-never-home-alone-creatures-to-plants-outside"
+class="section level1">
+<h1>Compare Never Home Alone creatures to plants outside</h1>
+<pre class="r"><code>rare_cutoff &lt;- 20 #drop rare species
+
+dat.points.nha &lt;- read_csv(&quot;data/observations-524273.csv.gz&quot;, guess_max=1e6) %&gt;% 
+  rename(species=scientific_name, decimalLongitude=longitude, decimalLatitude=latitude, phylum=iconic_taxon_name) %&gt;% #GBIF names
+  mutate(phylum = phylum %&gt;% fct_infreq() %&gt;% fct_lump_n(7, other_level=&quot;other&quot;)) %&gt;% 
+  drop_na(decimalLongitude, phylum) %&gt;% 
+  as.data.frame() %&gt;% 
+  st_as_sf(coords = c(&quot;decimalLongitude&quot;, &quot;decimalLatitude&quot;), crs = &quot;WGS84&quot;) %&gt;% 
+  st_intersection(world) %&gt;% 
+  group_by(species) %&gt;% filter(n()&gt;rare_cutoff) %&gt;% ungroup() %&gt;% drop_na(species) %&gt;% 
+  mutate(species=factor(species), species_int = as.integer(species))
+
+#use same Voronoi cells as above (tri) to group nha data
+tri.obj.nha &lt;- group_by_cell(dat.points.nha, tri, min_obs=tri_min_obs)
+dat.tri.nha &lt;- tri.obj.nha$data # some of the cells contain less than tri_min_obs observations and are omitted
+tri.full.nha &lt;- tri.obj.nha$grid</code></pre>
+<pre class="r"><code>#geographic distance between cells
+tri.centroids &lt;- tri.full.nha %&gt;% st_transform(ortho) %&gt;% st_centroid()
+dist.geog &lt;- st_distance(tri.centroids, tri.centroids) %&gt;% as.dist()
+dist.geog.km &lt;- dist.geog %&gt;% as.vector() / 1000 #convert to km
+
+#Bray-Curtis distance between relative species composistion of cells (for NHA and plants)
+dist.nha &lt;- dat.tri.nha %&gt;% decostand(&quot;hellinger&quot;) %&gt;% vegdist()
+dist.plants &lt;- dat.tri[rownames(dat.tri.nha),] %&gt;% decostand(&quot;hellinger&quot;) %&gt;% vegdist()
+
+plot_mantel &lt;- function(df) {
+  ggplot(df, aes(x=df[,1], y=df[,2])) + 
+    geom_point(color=&quot;grey&quot;, shape=1, alpha=0.2) + geom_smooth() + theme_minimal() + 
+    coord_cartesian(xlim=c(0,NA), ylim=c(0,NA))+
+    labs(title=paste(&quot;Mantel statistic =&quot;, round(cor(df[,1], df[,2]), 2)),
+         x = colnames(df)[1], y=colnames(df)[2])
+}
+
+plot_mantel(cbind(`Geographic distance (km)`=dist.geog.km, `Plant community dissimilarity`=dist.plants))</code></pre>
+<p><img src="images-nap/nha_compare-1.svg" width="1800px" /></p>
+<pre class="r"><code>plot_mantel(cbind(`Geographic distance (km)`=dist.geog.km, `Indoor community dissimilarity`=dist.nha))</code></pre>
+<p><img src="images-nap/nha_compare-2.svg" width="1800px" /></p>
+<pre class="r"><code>plot_mantel(cbind(`Plant community dissimilarity`=dist.plants, `Indoor community dissimilarity`=dist.nha))</code></pre>
+<p><img src="images-nap/nha_compare-3.svg" width="1800px" /></p>
+<pre class="r"><code># mc &lt;- mantel.correlog(dist.plants, dist.geog/1000)
+# plot(mc)</code></pre>
 </div>
 
 
