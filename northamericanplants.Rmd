@@ -11,14 +11,6 @@ editor_options:
   chunk_output_type: console
 ---
 
-<style type="text/css">
-.main-container {
-  max-width: 1800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-</style>
-
 ```{r setup, message=FALSE}
 library(tidyverse)
 library(sf)
@@ -37,14 +29,23 @@ Download iNaturalist plant observations from [GBIF](https://doi.org/10.15468/dl.
 
 ```{r load_data, eval=F}
 rare_cutoff <- 500 #drop rare species
-#iNaturalist observations
-dat.common <- read_tsv("~/Downloads/0001545-250402121839773.csv.zip") %>% 
+#plants https://doi.org/10.15468/dl.awvzvb
+read_tsv("~/Downloads/0001545-250402121839773.csv.zip") %>% 
   select(species, order, decimalLongitude, decimalLatitude) %>%
   drop_na(decimalLongitude, order) %>% 
   mutate(order = fct_lump_n(order, 7, other_level="other"),
          species = fct_lump_min(species, rare_cutoff)) %>% 
   filter(species != "Other") %>% 
   write_tsv(file="./data/0001545-250402121839773_min500.tsv.gz")
+
+#arthropods https://doi.org/10.15468/dl.5ue7vy
+read_tsv("~/Downloads/0026931-250426092105405.csv.zip") %>% 
+  select(species, order, decimalLongitude, decimalLatitude) %>%
+  drop_na(decimalLongitude, order) %>% 
+  mutate(order = fct_lump_n(order, 7, other_level="other"),
+         species = fct_lump_min(species, rare_cutoff)) %>% 
+  filter(species != "Other") %>% 
+  write_tsv(file="./data/0026931-250426092105405_min500.tsv.gz")
 ```
 
 ```{r load_gbif}
@@ -139,7 +140,7 @@ Try to order the clusters by similarity in a linear gradient. This could potenti
 ```{r gradient}
 tri.km.nmds <- metaMDS(tri.km$centers, k=1, trace=F)
 tri.full$cluster <- factor(tri.km$cluster, levels=order(t(tri.km.nmds$points)))
-ggplot() + geom_sf(data = tri.full, aes(fill=factor(as.integer(cluster))), linewidth=0.2, color="grey80") + 
+ggplot() + geom_sf(data = tri.full %>% st_transform(ortho), aes(fill=factor(as.integer(cluster))), linewidth=0.2, color="grey80") + 
   theme_void() + scale_fill_viridis_d("Cluster", option="mako", guide="none") 
 ```
 
@@ -164,7 +165,7 @@ plot_nmds <- function(data, grid, min_to_show) {
 plot_nmds(dat.tri, tri.km, min_to_show=2000)
 ```
 
-# Compare Never Home Alone creatures to plants outside
+# Compare Never Home Alone creatures to plants and arthropods outside
 
 ```{r nha_data}
 rare_cutoff <- 20 #drop rare species
@@ -185,29 +186,67 @@ dat.tri.nha <- tri.obj.nha$data # some of the cells contain less than tri_min_ob
 tri.full.nha <- tri.obj.nha$grid
 ```
 
-```{r nha_compare, fig.height=4, fig.width=4}
+```{r bug_data}
+dat.points.bug <- read_tsv("./data/0026931-250426092105405_min500.tsv.gz") %>%
+  mutate(species=factor(species), order=fct_relevel(order, "other", after=Inf)) %>% 
+  as.data.frame() %>% 
+  st_as_sf(coords = c("decimalLongitude", "decimalLatitude"), crs = "WGS84") 
+
+tri.obj.bug <- group_by_cell(dat.points.bug, tri, min_obs=tri_min_obs)
+dat.tri.bug <- tri.obj.bug$data # some of the cells contain less than tri_min_obs observations and are omitted
+tri.full.bug <- tri.obj.bug$grid
+```
+
+
+```{r nha_compare, fig.height=6, fig.width=6}
 #geographic distance between cells
 tri.centroids <- tri.full.nha %>% st_transform(ortho) %>% st_centroid()
 dist.geog <- st_distance(tri.centroids, tri.centroids) %>% as.dist()
 dist.geog.km <- dist.geog %>% as.vector() / 1000 #convert to km
 
-#Bray-Curtis distance between relative species composistion of cells (for NHA and plants)
-dist.nha <- dat.tri.nha %>% decostand("hellinger") %>% vegdist()
-dist.plants <- dat.tri[rownames(dat.tri.nha),] %>% decostand("hellinger") %>% vegdist()
+datasets = c(nha="Never Home Alone", plants="Plants", bug="Arthropods")
+dataset_pal <- c(nha="cornflowerblue", plants="forestgreen", bug="brown3")
+
+#Bray-Curtis distance between relative species composition of cells
+dist.list <- list(nha=dat.tri.nha, plants=dat.tri, bug=dat.tri.bug) %>%
+  map(~.x[rownames(dat.tri.nha),] %>% decostand("hellinger") %>% vegdist())
+dist.df <- dist.list %>% map(as.numeric) %>% bind_cols() %>% bind_cols(geog=dist.geog.km)
+dist.df.long <- dist.df %>% pivot_longer(c(nha, plants, bug), names_to = "dataset", values_to="bcdist")
+
+ggplot(dist.df.long, aes(x=geog, y=bcdist, color=dataset)) + 
+  geom_point(shape=1, alpha=0.1) + geom_smooth(method="loess", se=F, span=0.1, linewidth=2) +
+  coord_cartesian(xlim=c(0,4000), ylim=c(0,1))+
+  labs(x="Distance (km)", y="Dissimilarity in relative species abundances", color="Observations")+
+  scale_color_manual(values=dataset_pal, labels=datasets) +
+  theme_minimal() + theme(legend.position = "top")
+
+mc.geog <- dist.list %>% 
+  map_dfr(~mantel.correlog(.x, dist.geog/1000, n.class=20, cutoff=F)$mantel.res %>% 
+                              as_tibble() %>% mutate(dens.dist = n.dist/sum(n.dist)), .id="dataset")
+
+ggplot(mc.geog, aes(x=class.index, y=Mantel.cor, color=dataset, group=dataset, shape=`Pr(corrected)`<0.05)) + 
+  geom_hline(yintercept=0) + geom_path()+ geom_point(size=4) +
+  #geom_col(aes(y=dens.dist, fill=dataset), position="dodge") +
+  coord_cartesian(xlim=c(0, 4000)) + labs(x="Distance (km)", y="Mantel correlation", color="Observations")+
+    scale_color_manual(values=dataset_pal, labels=datasets) +
+  scale_shape_manual(values=c(1, 19))+ guides(shape=F)+
+  theme_minimal() + theme(legend.position = "top")
 
 plot_mantel <- function(df) {
+  df <- as.data.frame(df)
   ggplot(df, aes(x=df[,1], y=df[,2])) + 
-    geom_point(color="grey", shape=1, alpha=0.2) + geom_smooth() + theme_minimal() + 
+    geom_point(color="grey", shape=1, alpha=0.2) + 
+    geom_smooth(method="loess", se=F, span=0.1, linewidth=2) +
     coord_cartesian(xlim=c(0,NA), ylim=c(0,NA))+
-    labs(title=paste("Mantel statistic =", round(cor(df[,1], df[,2]), 2)),
-         x = colnames(df)[1], y=colnames(df)[2])
+    labs(title="Dissimilarities in relative species composition", 
+         subtite=paste("overall Mantel statistic =", round(cor(df[,1], df[,2]), 2)),
+         x = datasets[colnames(df)[1]], y=datasets[colnames(df)[2]]) + theme_minimal()
 }
 
-plot_mantel(cbind(`Geographic distance (km)`=dist.geog.km, `Plant community dissimilarity`=dist.plants))
-plot_mantel(cbind(`Geographic distance (km)`=dist.geog.km, `Indoor community dissimilarity`=dist.nha))
-plot_mantel(cbind(`Plant community dissimilarity`=dist.plants, `Indoor community dissimilarity`=dist.nha))
+plot_mantel(select(dist.df, plants, nha))
+with(dist.list, mantel.partial(nha, plants, dist.geog))
 
-# mc <- mantel.correlog(dist.plants, dist.geog/1000)
-# plot(mc)
+plot_mantel(select(dist.df, bug, nha))
+with(dist.list, mantel.partial(nha, bug, dist.geog))
 ```
 

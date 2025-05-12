@@ -11,7 +11,7 @@
 
 <meta name="author" content="John Powers" />
 
-<meta name="date" content="2025-05-05" />
+<meta name="date" content="2025-05-12" />
 
 <title>North American Plant Ecoregions</title>
 
@@ -177,18 +177,11 @@ pre code {
 <h1 class="title toc-ignore">North American Plant Ecoregions</h1>
 <h4 class="author"><a href="http://sites.uci.edu/powers/">John
 Powers</a></h4>
-<h4 class="date">2025-05-05</h4>
+<h4 class="date">2025-05-12</h4>
 
 </div>
 
 
-<style type="text/css">
-.main-container {
-  max-width: 1800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-</style>
 <pre class="r"><code>library(tidyverse)
 library(sf)
 sf_use_s2(FALSE)
@@ -204,14 +197,23 @@ knitr::opts_chunk$set(comment=&quot;&quot;, cache=T, warning = F, message = F, f
 href="https://doi.org/10.15468/dl.awvzvb">GBIF</a>. Then color
 observations by group.</p>
 <pre class="r"><code>rare_cutoff &lt;- 500 #drop rare species
-#iNaturalist observations
-dat.common &lt;- read_tsv(&quot;~/Downloads/0001545-250402121839773.csv.zip&quot;) %&gt;% 
+#plants https://doi.org/10.15468/dl.awvzvb
+read_tsv(&quot;~/Downloads/0001545-250402121839773.csv.zip&quot;) %&gt;% 
   select(species, order, decimalLongitude, decimalLatitude) %&gt;%
   drop_na(decimalLongitude, order) %&gt;% 
   mutate(order = fct_lump_n(order, 7, other_level=&quot;other&quot;),
          species = fct_lump_min(species, rare_cutoff)) %&gt;% 
   filter(species != &quot;Other&quot;) %&gt;% 
-  write_tsv(file=&quot;./data/0001545-250402121839773_min500.tsv.gz&quot;)</code></pre>
+  write_tsv(file=&quot;./data/0001545-250402121839773_min500.tsv.gz&quot;)
+
+#arthropods https://doi.org/10.15468/dl.5ue7vy
+read_tsv(&quot;~/Downloads/0026931-250426092105405.csv.zip&quot;) %&gt;% 
+  select(species, order, decimalLongitude, decimalLatitude) %&gt;%
+  drop_na(decimalLongitude, order) %&gt;% 
+  mutate(order = fct_lump_n(order, 7, other_level=&quot;other&quot;),
+         species = fct_lump_min(species, rare_cutoff)) %&gt;% 
+  filter(species != &quot;Other&quot;) %&gt;% 
+  write_tsv(file=&quot;./data/0026931-250426092105405_min500.tsv.gz&quot;)</code></pre>
 <pre class="r"><code>dat.points &lt;- read_tsv(&quot;./data/0001545-250402121839773_min500.tsv.gz&quot;) %&gt;%
   mutate(species=factor(species), order=fct_relevel(order, &quot;other&quot;, after=Inf)) %&gt;% 
   as.data.frame() %&gt;% 
@@ -306,7 +308,7 @@ the number line. Then map the ordered cluster number to a color
 scale.</p>
 <pre class="r"><code>tri.km.nmds &lt;- metaMDS(tri.km$centers, k=1, trace=F)
 tri.full$cluster &lt;- factor(tri.km$cluster, levels=order(t(tri.km.nmds$points)))
-ggplot() + geom_sf(data = tri.full, aes(fill=factor(as.integer(cluster))), linewidth=0.2, color=&quot;grey80&quot;) + 
+ggplot() + geom_sf(data = tri.full %&gt;% st_transform(ortho), aes(fill=factor(as.integer(cluster))), linewidth=0.2, color=&quot;grey80&quot;) + 
   theme_void() + scale_fill_viridis_d(&quot;Cluster&quot;, option=&quot;mako&quot;, guide=&quot;none&quot;) </code></pre>
 <p><img src="images-nap/gradient-1.svg" width="1800px" /></p>
 </div>
@@ -334,9 +336,11 @@ order.</p>
 plot_nmds(dat.tri, tri.km, min_to_show=2000)</code></pre>
 <p><img src="images-nap/nmds-1.svg" width="1800px" /></p>
 </div>
-<div id="compare-never-home-alone-creatures-to-plants-outside"
+<div
+id="compare-never-home-alone-creatures-to-plants-and-arthropods-outside"
 class="section level1">
-<h1>Compare Never Home Alone creatures to plants outside</h1>
+<h1>Compare Never Home Alone creatures to plants and arthropods
+outside</h1>
 <pre class="r"><code>rare_cutoff &lt;- 20 #drop rare species
 
 dat.points.nha &lt;- read_csv(&quot;data/observations-524273.csv.gz&quot;, guess_max=1e6) %&gt;% 
@@ -353,31 +357,92 @@ dat.points.nha &lt;- read_csv(&quot;data/observations-524273.csv.gz&quot;, guess
 tri.obj.nha &lt;- group_by_cell(dat.points.nha, tri, min_obs=tri_min_obs)
 dat.tri.nha &lt;- tri.obj.nha$data # some of the cells contain less than tri_min_obs observations and are omitted
 tri.full.nha &lt;- tri.obj.nha$grid</code></pre>
+<pre class="r"><code>dat.points.bug &lt;- read_tsv(&quot;./data/0026931-250426092105405_min500.tsv.gz&quot;) %&gt;%
+  mutate(species=factor(species), order=fct_relevel(order, &quot;other&quot;, after=Inf)) %&gt;% 
+  as.data.frame() %&gt;% 
+  st_as_sf(coords = c(&quot;decimalLongitude&quot;, &quot;decimalLatitude&quot;), crs = &quot;WGS84&quot;) 
+
+tri.obj.bug &lt;- group_by_cell(dat.points.bug, tri, min_obs=tri_min_obs)
+dat.tri.bug &lt;- tri.obj.bug$data # some of the cells contain less than tri_min_obs observations and are omitted
+tri.full.bug &lt;- tri.obj.bug$grid</code></pre>
 <pre class="r"><code>#geographic distance between cells
 tri.centroids &lt;- tri.full.nha %&gt;% st_transform(ortho) %&gt;% st_centroid()
 dist.geog &lt;- st_distance(tri.centroids, tri.centroids) %&gt;% as.dist()
 dist.geog.km &lt;- dist.geog %&gt;% as.vector() / 1000 #convert to km
 
-#Bray-Curtis distance between relative species composistion of cells (for NHA and plants)
-dist.nha &lt;- dat.tri.nha %&gt;% decostand(&quot;hellinger&quot;) %&gt;% vegdist()
-dist.plants &lt;- dat.tri[rownames(dat.tri.nha),] %&gt;% decostand(&quot;hellinger&quot;) %&gt;% vegdist()
+datasets = c(nha=&quot;Never Home Alone&quot;, plants=&quot;Plants&quot;, bug=&quot;Arthropods&quot;)
+dataset_pal &lt;- c(nha=&quot;cornflowerblue&quot;, plants=&quot;forestgreen&quot;, bug=&quot;brown3&quot;)
 
-plot_mantel &lt;- function(df) {
+#Bray-Curtis distance between relative species composition of cells
+dist.list &lt;- list(nha=dat.tri.nha, plants=dat.tri, bug=dat.tri.bug) %&gt;%
+  map(~.x[rownames(dat.tri.nha),] %&gt;% decostand(&quot;hellinger&quot;) %&gt;% vegdist())
+dist.df &lt;- dist.list %&gt;% map(as.numeric) %&gt;% bind_cols() %&gt;% bind_cols(geog=dist.geog.km)
+dist.df.long &lt;- dist.df %&gt;% pivot_longer(c(nha, plants, bug), names_to = &quot;dataset&quot;, values_to=&quot;bcdist&quot;)
+
+ggplot(dist.df.long, aes(x=geog, y=bcdist, color=dataset)) + 
+  geom_point(shape=1, alpha=0.1) + geom_smooth(method=&quot;loess&quot;, se=F, span=0.1, linewidth=2) +
+  coord_cartesian(xlim=c(0,4000), ylim=c(0,1))+
+  labs(x=&quot;Distance (km)&quot;, y=&quot;Dissimilarity in relative species abundances&quot;, color=&quot;Observations&quot;)+
+  scale_color_manual(values=dataset_pal, labels=datasets) +
+  theme_minimal() + theme(legend.position = &quot;top&quot;)</code></pre>
+<p><img src="images-nap/nha_compare-1.svg" width="1800px" /></p>
+<pre class="r"><code>mc.geog &lt;- dist.list %&gt;% 
+  map_dfr(~mantel.correlog(.x, dist.geog/1000, n.class=20, cutoff=F)$mantel.res %&gt;% 
+                              as_tibble() %&gt;% mutate(dens.dist = n.dist/sum(n.dist)), .id=&quot;dataset&quot;)
+
+ggplot(mc.geog, aes(x=class.index, y=Mantel.cor, color=dataset, group=dataset, shape=`Pr(corrected)`&lt;0.05)) + 
+  geom_hline(yintercept=0) + geom_path()+ geom_point(size=4) +
+  #geom_col(aes(y=dens.dist, fill=dataset), position=&quot;dodge&quot;) +
+  coord_cartesian(xlim=c(0, 4000)) + labs(x=&quot;Distance (km)&quot;, y=&quot;Mantel correlation&quot;, color=&quot;Observations&quot;)+
+    scale_color_manual(values=dataset_pal, labels=datasets) +
+  scale_shape_manual(values=c(1, 19))+ guides(shape=F)+
+  theme_minimal() + theme(legend.position = &quot;top&quot;)</code></pre>
+<p><img src="images-nap/nha_compare-2.svg" width="1800px" /></p>
+<pre class="r"><code>plot_mantel &lt;- function(df) {
+  df &lt;- as.data.frame(df)
   ggplot(df, aes(x=df[,1], y=df[,2])) + 
-    geom_point(color=&quot;grey&quot;, shape=1, alpha=0.2) + geom_smooth() + theme_minimal() + 
+    geom_point(color=&quot;grey&quot;, shape=1, alpha=0.2) + 
+    geom_smooth(method=&quot;loess&quot;, se=F, span=0.1, linewidth=2) +
     coord_cartesian(xlim=c(0,NA), ylim=c(0,NA))+
-    labs(title=paste(&quot;Mantel statistic =&quot;, round(cor(df[,1], df[,2]), 2)),
-         x = colnames(df)[1], y=colnames(df)[2])
+    labs(title=&quot;Dissimilarities in relative species composition&quot;, 
+         subtite=paste(&quot;overall Mantel statistic =&quot;, round(cor(df[,1], df[,2]), 2)),
+         x = datasets[colnames(df)[1]], y=datasets[colnames(df)[2]]) + theme_minimal()
 }
 
-plot_mantel(cbind(`Geographic distance (km)`=dist.geog.km, `Plant community dissimilarity`=dist.plants))</code></pre>
-<p><img src="images-nap/nha_compare-1.svg" width="1800px" /></p>
-<pre class="r"><code>plot_mantel(cbind(`Geographic distance (km)`=dist.geog.km, `Indoor community dissimilarity`=dist.nha))</code></pre>
-<p><img src="images-nap/nha_compare-2.svg" width="1800px" /></p>
-<pre class="r"><code>plot_mantel(cbind(`Plant community dissimilarity`=dist.plants, `Indoor community dissimilarity`=dist.nha))</code></pre>
+plot_mantel(select(dist.df, plants, nha))</code></pre>
 <p><img src="images-nap/nha_compare-3.svg" width="1800px" /></p>
-<pre class="r"><code># mc &lt;- mantel.correlog(dist.plants, dist.geog/1000)
-# plot(mc)</code></pre>
+<pre class="r"><code>with(dist.list, mantel.partial(nha, plants, dist.geog))</code></pre>
+<pre><code>
+Partial Mantel statistic based on Pearson&#39;s product-moment correlation 
+
+Call:
+mantel.partial(xdis = nha, ydis = plants, zdis = dist.geog) 
+
+Mantel statistic r: 0.3908 
+      Significance: 0.001 
+
+Upper quantiles of permutations (null model):
+   90%    95%  97.5%    99% 
+0.0708 0.0890 0.1095 0.1272 
+Permutation: free
+Number of permutations: 999</code></pre>
+<pre class="r"><code>plot_mantel(select(dist.df, bug, nha))</code></pre>
+<p><img src="images-nap/nha_compare-4.svg" width="1800px" /></p>
+<pre class="r"><code>with(dist.list, mantel.partial(nha, bug, dist.geog))</code></pre>
+<pre><code>
+Partial Mantel statistic based on Pearson&#39;s product-moment correlation 
+
+Call:
+mantel.partial(xdis = nha, ydis = bug, zdis = dist.geog) 
+
+Mantel statistic r: 0.4283 
+      Significance: 0.001 
+
+Upper quantiles of permutations (null model):
+   90%    95%  97.5%    99% 
+0.0679 0.0821 0.0973 0.1149 
+Permutation: free
+Number of permutations: 999</code></pre>
 </div>
 
 
