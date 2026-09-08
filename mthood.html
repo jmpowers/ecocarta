@@ -521,6 +521,18 @@ tri.full$cluster_ordered &lt;- factor(as.integer(factor(tri.full$cluster, levels
 ggplot() + geom_sf(data = tri.full, aes(fill = cluster_ordered), linewidth=0.5, color=&quot;grey80&quot;) + 
   theme_void() + scale_fill_viridis_d(&quot;Cluster&quot;, option=&quot;mako&quot;, guide=&quot;none&quot;)</code></pre>
 <p><img src="images-mthood/gradient-1.svg" width="900px" /></p>
+<pre class="r"><code>topcounts &lt;- dat.tri %&gt;% as.data.frame() %&gt;% rownames_to_column(&quot;grid_id&quot;) %&gt;% mutate(grid_id=as.numeric(grid_id)) %&gt;% 
+  pivot_longer(-grid_id) %&gt;% group_by(grid_id) %&gt;% slice_max(value, n = 10, with_ties=F) %&gt;% 
+  summarize(top_species = paste(value, name, collapse = &quot;\n&quot;))
+
+standout.summary &lt;- standout %&gt;% group_by(cluster) %&gt;% 
+  summarize(standouts = paste(sprintf(&quot;%.2f&quot;,scaled_mean), species, collapse = &quot;\n&quot;))
+  
+tri.full %&gt;% left_join(topcounts) %&gt;% left_join(standout.summary) %&gt;% 
+  mutate(Name=paste(&quot;Cluster&quot;, cluster, &quot;Area&quot;, grid_id),
+         Description = paste0(top_species, &quot;\n\n Cluster standouts:\n&quot;, standouts),
+         OGR_STYLE = paste0(&quot;PEN(fc:#FF666666,w:2px);BRUSH(fc:&quot;,adjustcolor(pal[cluster], alpha.f = 1),&quot;)&quot;)) %&gt;% 
+  st_write(&quot;images-mthood/mthood.kml&quot;, driver=&quot;LIBKML&quot;, delete_dsn = T)</code></pre>
 </div>
 
 
