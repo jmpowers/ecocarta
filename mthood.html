@@ -11,7 +11,7 @@
 
 <meta name="author" content="John Powers" />
 
-<meta name="date" content="2026-09-08" />
+<meta name="date" content="2026-09-09" />
 
 <title>Mount Hood Ecoregions</title>
 
@@ -177,7 +177,7 @@ pre code {
 <h1 class="title toc-ignore">Mount Hood Ecoregions</h1>
 <h4 class="author"><a href="http://sites.uci.edu/powers/">John
 Powers</a></h4>
-<h4 class="date">2026-09-08</h4>
+<h4 class="date">2026-09-09</h4>
 
 </div>
 
@@ -220,17 +220,18 @@ dat.common &lt;- dat.all %&gt;%
 
 dat.points &lt;- dat.common %&gt;% st_as_sf(coords = c(&quot;decimalLongitude&quot;, &quot;decimalLatitude&quot;), crs = &quot;WGS84&quot;) 
 
-phyla &lt;- c(plant=&quot;Tracheophyta&quot;, mollusc=&quot;Mollusca&quot;, vertebrate=&quot;Chordata&quot;, basidiomycete=&quot;Basidiomycota&quot;, ascomycete=&quot;Ascomycota&quot;, arthropod=&quot;Arthropoda&quot;)
+phyla &lt;- c(arthropod=&quot;Arthropoda&quot;, ascomycete=&quot;Ascomycota&quot;, basidiomycete=&quot;Basidiomycota&quot;, 
+           vertebrate=&quot;Chordata&quot;, mollusc=&quot;Mollusca&quot;, plant=&quot;Tracheophyta&quot;)
+phylum_pal &lt;- set_names(brewer.pal(6, &quot;Set1&quot;)[c(1,2,4,6,5,3)], names(phyla))
+phylum_emojis &lt;- set_names(c(&quot;\U1F980&quot;,&quot;\U1F344&quot;,&quot;\U1F344&quot;,&quot;\U1F426&quot;,&quot;\U1F40C&quot;, &quot;\U1F331&quot;), names(phyla))
 
-specs &lt;- dat.points %&gt;% as.data.frame %&gt;% count(species, phylum, name=&quot;n_total&quot;) %&gt;% 
-  mutate(phylum = fct_recode(phylum, !!!phyla))
-
-phylum_pal &lt;- set_names(brewer.pal(6, &quot;Set1&quot;)[c(1,2,4,6,5,3)], levels(specs$phylum))</code></pre>
+specs &lt;- dat.points %&gt;% as_tibble %&gt;% count(species, phylum, name=&quot;n_total&quot;) %&gt;% 
+  mutate(phylum = fct_recode(phylum, !!!phyla), emoji = recode(phylum, !!!phylum_emojis))</code></pre>
 <pre class="r"><code>ggplot() + 
-  geom_sf(data=dat.points, aes(color=fct_recode(fct_rev(phylum), !!!phyla)), size=0.3) + 
+  geom_sf(data=dat.points, aes(color=fct_recode(phylum, !!!phyla)), size=0.3) + 
   coord_sf(expand = F)+
   theme_void() + theme(plot.background = element_rect(fill = &quot;black&quot;), legend.text = element_text(color = &quot;white&quot;))+
-  scale_color_brewer(&quot;&quot;,palette = &quot;Set2&quot;, guide=guide_legend(override.aes = list(size=4))) </code></pre>
+  scale_color_manual(&quot;&quot;,values=phylum_pal, guide=guide_legend(override.aes = list(size=4))) </code></pre>
 <p><img src="images-mthood/load_gbif-1.svg" width="900px" /></p>
 <pre class="r"><code>group_by_cell &lt;- function(points, grid, min_obs=0) {
   #assign points to cells
@@ -275,8 +276,8 @@ sample some random seed observations - dense observations areas should
 have more sampled points. Then, define the region that is closest to
 each point, makig a Voronoi diagram. The relative variation in
 observation number per cell is now half that of the hex grid.</p>
-<pre class="r"><code>n_seeds &lt;- 144
-set.seed(1)
+<pre class="r"><code>n_seeds &lt;- 200
+set.seed(2)
 dat.sample &lt;- sample_n(dat.points, n_seeds)
 tri &lt;- dat.sample %&gt;% st_geometry() %&gt;% do.call(c, .) %&gt;% st_voronoi() %&gt;% 
   st_collection_extract() %&gt;% st_set_crs(&quot;WGS84&quot;) %&gt;% st_sf() %&gt;%
@@ -297,10 +298,7 @@ ggplot() + geom_sf(data=tri.full, aes(fill=n_obs), linewidth=0.5, color=&quot;gr
 the relative abundance of each taxon. Assign each cell to a cluster of
 similar communities using the k-means algorithm. Set the number of
 clusters and assign each a color.</p>
-<pre class="r"><code>fviz_nbclust(decostand(dat.tri, &quot;hellinger&quot;), kmeans, method = &quot;wss&quot;)
-fviz_nbclust(decostand(dat.tri, &quot;hellinger&quot;), kmeans, method = &quot;silhouette&quot;)
-fviz_nbclust(decostand(dat.tri, &quot;hellinger&quot;), kmeans, method = &quot;gap_stat&quot;)</code></pre>
-<pre class="r"><code>n_clusters &lt;- 7
+<pre class="r"><code>n_clusters &lt;- 11
 pal &lt;- c(brewer.pal(8, &quot;Set2&quot;), brewer.pal(12, &quot;Set3&quot;))[1:n_clusters] %&gt;% set_names(1:n_clusters)
 
 set.seed(1)
@@ -324,23 +322,25 @@ standout &lt;- tri.km$centers %&gt;% scale() %&gt;% as.data.frame() %&gt;% rowna
   group_by(cluster) %&gt;% slice_max(n_total,n=5) %&gt;% 
   arrange(desc(scaled_mean)) %&gt;% mutate(rank=1:5) 
 
-# ggplot(standout, aes(y=cluster, x=scaled_mean, size=n_total, color=phylum)) + geom_point() +
-#   scale_color_manual(values = phylum_pal)
-
-standout %&gt;% select(cluster, species, rank) %&gt;%
-  mutate(species = cell_spec(species, color = pal[cluster], italic=T, bold=T)) %&gt;%
+standout %&gt;% select(cluster, species, emoji, rank) %&gt;%
+  mutate(species = cell_spec(paste(emoji, species), color = pal[cluster], italic=T, bold=T),
+         cluster = as.integer(cluster)) %&gt;% select(-emoji) %&gt;%
   pivot_wider(names_from=cluster, names_sort=T, values_from=species) %&gt;% 
   kable(escape = FALSE) </code></pre>
 <table style="width:100%;">
 <colgroup>
 <col width="0%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
+<col width="8%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="8%" />
+<col width="8%" />
+<col width="9%" />
+<col width="8%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -352,131 +352,207 @@ standout %&gt;% select(cluster, species, rank) %&gt;%
 <th align="left">5</th>
 <th align="left">6</th>
 <th align="left">7</th>
+<th align="left">8</th>
+<th align="left">9</th>
+<th align="left">10</th>
+<th align="left">11</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="right">1</td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(102, 194, 165, 255) !important;">Calochortus
-subalpinus</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(102, 194, 165, 255) !important;">🌱
+Gaultheria shallon</span></td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(252, 141, 98, 255) !important;">Lomatium
-columbianum</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(252, 141, 98, 255) !important;">🌱
+Olsynium douglasii</span></td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(141, 160, 203, 255) !important;">Valeriana
-congesta</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(141, 160, 203, 255) !important;">🌱
+Lathyrus latifolius</span></td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(231, 138, 195, 255) !important;">Haliaeetus
-leucocephalus</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(231, 138, 195, 255) !important;">🌱
+Castilleja hispida</span></td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(166, 216, 84, 255) !important;">Ailanthus
-altissima</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(166, 216, 84, 255) !important;">🌱
+Ribes sanguineum</span></td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(255, 217, 47, 255) !important;">Rhododendron
-macrophyllum</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(255, 217, 47, 255) !important;">🌱
+Dicentra formosa</span></td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(229, 196, 148, 255) !important;">Corydalis
-scouleri</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(229, 196, 148, 255) !important;">🐦
+Sceloporus occidentalis</span></td>
+<td align="left"><span
+style=" font-weight: bold; font-style: italic;   color: rgba(179, 179, 179, 255) !important;">🌱
+Sedum spathulifolium</span></td>
+<td align="left"><span
+style=" font-weight: bold; font-style: italic;   color: rgba(141, 211, 199, 255) !important;">🌱
+Calochortus subalpinus</span></td>
+<td align="left"><span
+style=" font-weight: bold; font-style: italic;   color: rgba(255, 255, 179, 255) !important;">🐦
+Thamnophis sirtalis</span></td>
+<td align="left"><span
+style=" font-weight: bold; font-style: italic;   color: rgba(190, 186, 218, 255) !important;">🌱
+Rhododendron macrophyllum</span></td>
 </tr>
 <tr class="even">
 <td align="right">2</td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(102, 194, 165, 255) !important;">Sorbus
-sitchensis</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(102, 194, 165, 255) !important;">🌱
+Vaccinium parvifolium</span></td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(252, 141, 98, 255) !important;">Triteleia
-grandiflora</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(252, 141, 98, 255) !important;">🌱
+Centaurea cyanus</span></td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(141, 160, 203, 255) !important;">Sedum
-oreganum</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(141, 160, 203, 255) !important;">🌱
+Cichorium intybus</span></td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(231, 138, 195, 255) !important;">Pandion
-haliaetus</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(231, 138, 195, 255) !important;">🌱
+Hydrophyllum capitatum</span></td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(166, 216, 84, 255) !important;">Apocynum
-androsaemifolium</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(166, 216, 84, 255) !important;">🌱
+Aquilegia formosa</span></td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(255, 217, 47, 255) !important;">Cornus
-unalaschkensis</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(255, 217, 47, 255) !important;">🌱
+Digitalis purpurea</span></td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(229, 196, 148, 255) !important;">Digitalis
-purpurea</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(229, 196, 148, 255) !important;">🌱
+Lomatium nudicaule</span></td>
+<td align="left"><span
+style=" font-weight: bold; font-style: italic;   color: rgba(179, 179, 179, 255) !important;">🌱
+Petasites frigidus</span></td>
+<td align="left"><span
+style=" font-weight: bold; font-style: italic;   color: rgba(141, 211, 199, 255) !important;">🌱
+Tsuga mertensiana</span></td>
+<td align="left"><span
+style=" font-weight: bold; font-style: italic;   color: rgba(255, 255, 179, 255) !important;">🐦
+Pseudacris regilla</span></td>
+<td align="left"><span
+style=" font-weight: bold; font-style: italic;   color: rgba(190, 186, 218, 255) !important;">🌱
+Cornus unalaschkensis</span></td>
 </tr>
 <tr class="odd">
 <td align="right">3</td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(102, 194, 165, 255) !important;">Tsuga
-mertensiana</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(102, 194, 165, 255) !important;">🌱
+Tsuga heterophylla</span></td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(252, 141, 98, 255) !important;">Olsynium
-douglasii</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(252, 141, 98, 255) !important;">🌱
+Triteleia grandiflora</span></td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(141, 160, 203, 255) !important;">Prosartes
-hookeri</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(141, 160, 203, 255) !important;">🌱
+Holodiscus discolor</span></td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(231, 138, 195, 255) !important;">Pseudacris
-regilla</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(231, 138, 195, 255) !important;">🌱
+Lomatium columbianum</span></td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(166, 216, 84, 255) !important;">Apis
-mellifera</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(166, 216, 84, 255) !important;">🌱
+Selaginella douglasii</span></td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(255, 217, 47, 255) !important;">Clintonia
-uniflora</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(255, 217, 47, 255) !important;">🌱
+Claytonia sibirica</span></td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(229, 196, 148, 255) !important;">Ariolimax
-columbianus</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(229, 196, 148, 255) !important;">🌱
+Eriogonum compositum</span></td>
+<td align="left"><span
+style=" font-weight: bold; font-style: italic;   color: rgba(179, 179, 179, 255) !important;">🐦
+Cinclus mexicanus</span></td>
+<td align="left"><span
+style=" font-weight: bold; font-style: italic;   color: rgba(141, 211, 199, 255) !important;">🦀
+Nymphalis californica</span></td>
+<td align="left"><span
+style=" font-weight: bold; font-style: italic;   color: rgba(255, 255, 179, 255) !important;">🐦
+Haliaeetus leucocephalus</span></td>
+<td align="left"><span
+style=" font-weight: bold; font-style: italic;   color: rgba(190, 186, 218, 255) !important;">🌱
+Lysichiton americanus</span></td>
 </tr>
 <tr class="even">
 <td align="right">4</td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(102, 194, 165, 255) !important;">Valeriana
-sitchensis</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(102, 194, 165, 255) !important;">🌱
+Goodyera oblongifolia</span></td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(252, 141, 98, 255) !important;">Eriogonum
-compositum</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(252, 141, 98, 255) !important;">🌱
+Lithophragma parviflorum</span></td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(141, 160, 203, 255) !important;">Sedum
-spathulifolium</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(141, 160, 203, 255) !important;">🌱
+Eschscholzia californica</span></td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(231, 138, 195, 255) !important;">Odocoileus
-hemionus</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(231, 138, 195, 255) !important;">🌱
+Lomatium triternatum</span></td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(166, 216, 84, 255) !important;">Eschscholzia
-californica</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(166, 216, 84, 255) !important;">🌱
+Geranium robertianum</span></td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(255, 217, 47, 255) !important;">Chrysolepis
-chrysophylla</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(255, 217, 47, 255) !important;">🌱
+Rubus spectabilis</span></td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(229, 196, 148, 255) !important;">Rubus
-spectabilis</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(229, 196, 148, 255) !important;">🐦
+Odocoileus hemionus</span></td>
+<td align="left"><span
+style=" font-weight: bold; font-style: italic;   color: rgba(179, 179, 179, 255) !important;">🌱
+Lonicera ciliosa</span></td>
+<td align="left"><span
+style=" font-weight: bold; font-style: italic;   color: rgba(141, 211, 199, 255) !important;">🌱
+Anaphalis margaritacea</span></td>
+<td align="left"><span
+style=" font-weight: bold; font-style: italic;   color: rgba(255, 255, 179, 255) !important;">🐦
+Thamnophis ordinoides</span></td>
+<td align="left"><span
+style=" font-weight: bold; font-style: italic;   color: rgba(190, 186, 218, 255) !important;">🐦
+Taricha granulosa</span></td>
 </tr>
 <tr class="odd">
 <td align="right">5</td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(102, 194, 165, 255) !important;">Pedicularis
-racemosa</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(102, 194, 165, 255) !important;">🌱
+Maianthemum stellatum</span></td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(252, 141, 98, 255) !important;">Lithophragma
-parviflorum</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(252, 141, 98, 255) !important;">🌱
+Marah oregana</span></td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(141, 160, 203, 255) !important;">Erythranthe
-alsinoides</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(141, 160, 203, 255) !important;">🌱
+Mahonia aquifolium</span></td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(231, 138, 195, 255) !important;">Thamnophis
-sirtalis</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(231, 138, 195, 255) !important;">🌱
+Cardamine nuttallii</span></td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(166, 216, 84, 255) !important;">Lathyrus
-latifolius</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(166, 216, 84, 255) !important;">🌱
+Prosartes hookeri</span></td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(255, 217, 47, 255) !important;">Oplopanax
-horridus</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(255, 217, 47, 255) !important;">🌱
+Adiantum aleuticum</span></td>
 <td align="left"><span
-style=" font-weight: bold; font-style: italic;   color: rgba(229, 196, 148, 255) !important;">Claytonia
-sibirica</span></td>
+style=" font-weight: bold; font-style: italic;   color: rgba(229, 196, 148, 255) !important;">🌱
+Achillea millefolium</span></td>
+<td align="left"><span
+style=" font-weight: bold; font-style: italic;   color: rgba(179, 179, 179, 255) !important;">🦀
+Occidryas colon</span></td>
+<td align="left"><span
+style=" font-weight: bold; font-style: italic;   color: rgba(141, 211, 199, 255) !important;">🌱
+Nothochelone nemorosa</span></td>
+<td align="left"><span
+style=" font-weight: bold; font-style: italic;   color: rgba(255, 255, 179, 255) !important;">🐌
+Monadenia fidelis</span></td>
+<td align="left"><span
+style=" font-weight: bold; font-style: italic;   color: rgba(190, 186, 218, 255) !important;">🌱
+Xerophyllum tenax</span></td>
 </tr>
 </tbody>
 </table>
+<pre class="r"><code>ggplot(standout, aes(y=factor(cluster, levels=rev(1:n_clusters)))) + 
+  geom_col(aes(x=3, fill=cluster), position=&quot;identity&quot;, width=0.1)+
+  geom_point(aes(x=scaled_mean, size=n_total, shape=emoji)) +
+  scale_fill_manual(values = pal, guide=&quot;none&quot;) + scale_shape_identity() + 
+  theme_minimal() +  theme(legend.position = &quot;top&quot;) +
+  labs(x=&quot;Mean observations (centered and scaled by standard deviation)&quot;, 
+       y=&quot;Cluster&quot;, size=&quot;Total observations in dataset&quot;)</code></pre>
+<p><img src="images-mthood/standout-1.svg" width="900px" /></p>
+<pre class="r"><code># top species counts in each cell
+topcounts &lt;- dat.tri %&gt;% as.data.frame() %&gt;% rownames_to_column(&quot;grid_id&quot;) %&gt;% mutate(grid_id=as.numeric(grid_id)) %&gt;% 
+  pivot_longer(-grid_id, names_to = &quot;species&quot;) %&gt;% 
+  group_by(grid_id) %&gt;% slice_max(value, n = 10, with_ties=F) %&gt;% left_join(specs)</code></pre>
 </div>
 <div id="species-that-vary-across-space" class="section level1">
 <h1>Species that vary across space</h1>
@@ -489,9 +565,9 @@ order. The communities are broadly organized by phylum.</p>
 <pre class="r"><code>plot_nmds &lt;- function(data, grid, min_to_show) {
   nmds &lt;- metaMDS(data, trace=F)
   
-  par(bg=&quot;grey30&quot;, mar=c(0,0,0,0))
+  par(bg=&quot;black&quot;, mar=c(0,0,0,0))
   plot(nmds, type=&quot;n&quot;, axes=F, ann=F)
-  points(nmds, display=&quot;sites&quot;, col=pal[grid$cluster], pch=19)
+  points(nmds, display=&quot;sites&quot;, col=pal[grid$cluster], pch=19, cex=1.5)
   text(nmds, display=&quot;species&quot;, cex=0.7, font=4,
        col=if_else(specs$n_total &gt; min_to_show, phylum_pal[specs$phylum], alpha(&quot;black&quot;,0)))
   legend(&quot;topleft&quot;, levels(specs$phylum), fill=phylum_pal, bty=&quot;n&quot;, text.col=&quot;white&quot;)
@@ -521,14 +597,9 @@ tri.full$cluster_ordered &lt;- factor(as.integer(factor(tri.full$cluster, levels
 ggplot() + geom_sf(data = tri.full, aes(fill = cluster_ordered), linewidth=0.5, color=&quot;grey80&quot;) + 
   theme_void() + scale_fill_viridis_d(&quot;Cluster&quot;, option=&quot;mako&quot;, guide=&quot;none&quot;)</code></pre>
 <p><img src="images-mthood/gradient-1.svg" width="900px" /></p>
-<pre class="r"><code>topcounts &lt;- dat.tri %&gt;% as.data.frame() %&gt;% rownames_to_column(&quot;grid_id&quot;) %&gt;% mutate(grid_id=as.numeric(grid_id)) %&gt;% 
-  pivot_longer(-grid_id) %&gt;% group_by(grid_id) %&gt;% slice_max(value, n = 10, with_ties=F) %&gt;% 
-  summarize(top_species = paste(value, name, collapse = &quot;\n&quot;))
-
-standout.summary &lt;- standout %&gt;% group_by(cluster) %&gt;% 
-  summarize(standouts = paste(sprintf(&quot;%.2f&quot;,scaled_mean), species, collapse = &quot;\n&quot;))
-  
-tri.full %&gt;% left_join(topcounts) %&gt;% left_join(standout.summary) %&gt;% 
+<pre class="r"><code>tri.full %&gt;% 
+  left_join(summarize(topcounts, top_species = paste(value, species, collapse = &quot;\n&quot;))) %&gt;% 
+  left_join(summarize(standout, standouts = paste(sprintf(&quot;%.2f&quot;,scaled_mean), species, collapse = &quot;\n&quot;))) %&gt;% 
   mutate(Name=paste(&quot;Cluster&quot;, cluster, &quot;Area&quot;, grid_id),
          Description = paste0(top_species, &quot;\n\n Cluster standouts:\n&quot;, standouts),
          OGR_STYLE = paste0(&quot;PEN(fc:#FF666666,w:2px);BRUSH(fc:&quot;,adjustcolor(pal[cluster], alpha.f = 1),&quot;)&quot;)) %&gt;% 
