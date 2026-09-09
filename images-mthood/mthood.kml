@@ -13,7 +13,7 @@
     <Document id="mthood">
       <name>mthood</name>
       <Placemark id="mthood.1">
-        <name>Cluster 6 Area 1</name>
+        <name>Area1:595 obs</name>
         <description>47 Valeriana congesta
 32 Erythronium oregonum
 21 Camassia quamash
@@ -25,7 +25,7 @@
 13 Trillium ovatum
 12 Toxicodendron diversilobum
 
- Cluster standouts:
+ Cluster6standouts:
 2.19 Dicentra formosa
 2.15 Digitalis purpurea
 2.15 Claytonia sibirica
@@ -79,7 +79,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.2">
-        <name>Cluster 6 Area 2</name>
+        <name>Area2:250 obs</name>
         <description>10 Dicentra formosa
 8 Odocoileus hemionus
 7 Dipsacus fullonum
@@ -91,7 +91,7 @@
 5 Tellima grandiflora
 5 Thuja plicata
 
- Cluster standouts:
+ Cluster6standouts:
 2.19 Dicentra formosa
 2.15 Digitalis purpurea
 2.15 Claytonia sibirica
@@ -148,7 +148,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.3">
-        <name>Cluster 6 Area 3</name>
+        <name>Area3:487 obs</name>
         <description>32 Adiantum aleuticum
 32 Rubus spectabilis
 24 Dicentra formosa
@@ -160,7 +160,7 @@
 11 Lysichiton americanus
 11 Tiarella trifoliata
 
- Cluster standouts:
+ Cluster6standouts:
 2.19 Dicentra formosa
 2.15 Digitalis purpurea
 2.15 Claytonia sibirica
@@ -213,7 +213,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.4">
-        <name>Cluster 10 Area 4</name>
+        <name>Area4:158 obs</name>
         <description>57 Thaleichthys pacificus
 7 Cytisus scoparius
 5 Daucus carota
@@ -225,7 +225,7 @@
 3 Haliaeetus leucocephalus
 3 Marah oregana
 
- Cluster standouts:
+ Cluster10standouts:
 2.27 Thamnophis sirtalis
 2.20 Pseudacris regilla
 2.09 Haliaeetus leucocephalus
@@ -279,7 +279,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.5">
-        <name>Cluster 6 Area 5</name>
+        <name>Area5:843 obs</name>
         <description>30 Ariolimax columbianus
 24 Amanita muscaria
 22 Pseudotsuga menziesii
@@ -291,7 +291,7 @@
 18 Rubus spectabilis
 17 Marah oregana
 
- Cluster standouts:
+ Cluster6standouts:
 2.19 Dicentra formosa
 2.15 Digitalis purpurea
 2.15 Claytonia sibirica
@@ -347,7 +347,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.6">
-        <name>Cluster 6 Area 6</name>
+        <name>Area6:593 obs</name>
         <description>49 Thaleichthys pacificus
 18 Heracleum maximum
 15 Hydrophyllum tenuipes
@@ -359,7 +359,7 @@
 12 Trillium ovatum
 11 Marah oregana
 
- Cluster standouts:
+ Cluster6standouts:
 2.19 Dicentra formosa
 2.15 Digitalis purpurea
 2.15 Claytonia sibirica
@@ -414,7 +414,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.7">
-        <name>Cluster 10 Area 7</name>
+        <name>Area7:190 obs</name>
         <description>17 Falco sparverius
 16 Tanacetum vulgare
 13 Ardea herodias
@@ -426,7 +426,7 @@
 6 Eriophyllum lanatum
 6 Trifolium arvense
 
- Cluster standouts:
+ Cluster10standouts:
 2.27 Thamnophis sirtalis
 2.20 Pseudacris regilla
 2.09 Haliaeetus leucocephalus
@@ -482,7 +482,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.8">
-        <name>Cluster 1 Area 8</name>
+        <name>Area8:867 obs</name>
         <description>28 Xerophyllum tenax
 21 Dicentra formosa
 20 Parnassius clodius
@@ -494,7 +494,7 @@
 14 Digitalis purpurea
 13 Cornus unalaschkensis
 
- Cluster standouts:
+ Cluster1standouts:
 2.38 Gaultheria shallon
 2.14 Vaccinium parvifolium
 1.94 Tsuga heterophylla
@@ -551,7 +551,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.9">
-        <name>Cluster 10 Area 9</name>
+        <name>Area9:270 obs</name>
         <description>22 Dipsacus fullonum
 13 Lonicera involucrata
 13 Pseudacris regilla
@@ -563,7 +563,7 @@
 8 Thamnophis ordinoides
 7 Cornus sericea
 
- Cluster standouts:
+ Cluster10standouts:
 2.27 Thamnophis sirtalis
 2.20 Pseudacris regilla
 2.09 Haliaeetus leucocephalus
@@ -616,7 +616,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.10">
-        <name>Cluster 10 Area 10</name>
+        <name>Area10:211 obs</name>
         <description>8 Ardea herodias
 8 Haliaeetus leucocephalus
 8 Monadenia fidelis
@@ -628,7 +628,7 @@
 5 Cytisus scoparius
 5 Jacobaea vulgaris
 
- Cluster standouts:
+ Cluster10standouts:
 2.27 Thamnophis sirtalis
 2.20 Pseudacris regilla
 2.09 Haliaeetus leucocephalus
@@ -684,7 +684,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.11">
-        <name>Cluster 10 Area 11</name>
+        <name>Area11:359 obs</name>
         <description>25 Dipsacus fullonum
 21 Tanacetum vulgare
 12 Papilio rutulus
@@ -696,7 +696,7 @@
 9 Monadenia fidelis
 9 Turdus migratorius
 
- Cluster standouts:
+ Cluster10standouts:
 2.27 Thamnophis sirtalis
 2.20 Pseudacris regilla
 2.09 Haliaeetus leucocephalus
@@ -750,7 +750,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.12">
-        <name>Cluster 10 Area 12</name>
+        <name>Area12:335 obs</name>
         <description>23 Mahonia aquifolium
 19 Monadenia fidelis
 15 Quercus garryana
@@ -762,7 +762,7 @@
 9 Holodiscus discolor
 7 Camassia quamash
 
- Cluster standouts:
+ Cluster10standouts:
 2.27 Thamnophis sirtalis
 2.20 Pseudacris regilla
 2.09 Haliaeetus leucocephalus
@@ -815,7 +815,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.13">
-        <name>Cluster 6 Area 13</name>
+        <name>Area13:1400 obs</name>
         <description>43 Trillium ovatum
 31 Mahonia aquifolium
 29 Lysimachia latifolia
@@ -827,7 +827,7 @@
 23 Taricha granulosa
 22 Gaultheria shallon
 
- Cluster standouts:
+ Cluster6standouts:
 2.19 Dicentra formosa
 2.15 Digitalis purpurea
 2.15 Claytonia sibirica
@@ -881,7 +881,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.14">
-        <name>Cluster 6 Area 14</name>
+        <name>Area14:1210 obs</name>
         <description>58 Polystichum munitum
 47 Ariolimax columbianus
 47 Trillium ovatum
@@ -893,7 +893,7 @@
 25 Rubus spectabilis
 24 Claytonia sibirica
 
- Cluster standouts:
+ Cluster6standouts:
 2.19 Dicentra formosa
 2.15 Digitalis purpurea
 2.15 Claytonia sibirica
@@ -948,7 +948,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.15">
-        <name>Cluster 1 Area 15</name>
+        <name>Area15:755 obs</name>
         <description>16 Digitalis purpurea
 14 Maianthemum racemosum
 14 Polystichum munitum
@@ -960,7 +960,7 @@
 11 Acer macrophyllum
 10 Gaultheria shallon
 
- Cluster standouts:
+ Cluster1standouts:
 2.38 Gaultheria shallon
 2.14 Vaccinium parvifolium
 1.94 Tsuga heterophylla
@@ -1017,7 +1017,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.16">
-        <name>Cluster 1 Area 16</name>
+        <name>Area16:424 obs</name>
         <description>13 Gaultheria shallon
 12 Polystichum munitum
 10 Iris tenax
@@ -1029,7 +1029,7 @@
 8 Thuja plicata
 7 Anaphalis margaritacea
 
- Cluster standouts:
+ Cluster1standouts:
 2.38 Gaultheria shallon
 2.14 Vaccinium parvifolium
 1.94 Tsuga heterophylla
@@ -1082,7 +1082,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.17">
-        <name>Cluster 10 Area 17</name>
+        <name>Area17:89 obs</name>
         <description>15 Turdus migratorius
 8 Pandion haliaetus
 7 Cornus sericea
@@ -1094,7 +1094,7 @@
 2 Aphelocoma californica
 2 Buteo jamaicensis
 
- Cluster standouts:
+ Cluster10standouts:
 2.27 Thamnophis sirtalis
 2.20 Pseudacris regilla
 2.09 Haliaeetus leucocephalus
@@ -1149,7 +1149,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.18">
-        <name>Cluster 10 Area 18</name>
+        <name>Area18:252 obs</name>
         <description>11 Verbascum blattaria
 9 Odocoileus hemionus
 7 Dipsacus fullonum
@@ -1161,7 +1161,7 @@
 5 Leucanthemum vulgare
 5 Mahonia aquifolium
 
- Cluster standouts:
+ Cluster10standouts:
 2.27 Thamnophis sirtalis
 2.20 Pseudacris regilla
 2.09 Haliaeetus leucocephalus
@@ -1216,7 +1216,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.19">
-        <name>Cluster 6 Area 19</name>
+        <name>Area19:1504 obs</name>
         <description>54 Odocoileus hemionus
 43 Gaultheria shallon
 39 Adiantum aleuticum
@@ -1228,7 +1228,7 @@
 32 Hydrophyllum tenuipes
 30 Geranium robertianum
 
- Cluster standouts:
+ Cluster6standouts:
 2.19 Dicentra formosa
 2.15 Digitalis purpurea
 2.15 Claytonia sibirica
@@ -1284,7 +1284,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.20">
-        <name>Cluster 10 Area 20</name>
+        <name>Area20:265 obs</name>
         <description>29 Odocoileus hemionus
 20 Falco sparverius
 18 Ardea herodias
@@ -1296,7 +1296,7 @@
 7 Buteo jamaicensis
 7 Pipilo maculatus
 
- Cluster standouts:
+ Cluster10standouts:
 2.27 Thamnophis sirtalis
 2.20 Pseudacris regilla
 2.09 Haliaeetus leucocephalus
@@ -1348,7 +1348,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.21">
-        <name>Cluster 6 Area 21</name>
+        <name>Area21:74 obs</name>
         <description>6 Claytonia sibirica
 5 Trillium ovatum
 4 Odocoileus hemionus
@@ -1360,7 +1360,7 @@
 2 Rubus ursinus
 2 Scaphinotus angusticollis
 
- Cluster standouts:
+ Cluster6standouts:
 2.19 Dicentra formosa
 2.15 Digitalis purpurea
 2.15 Claytonia sibirica
@@ -1415,7 +1415,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.22">
-        <name>Cluster 10 Area 22</name>
+        <name>Area22:102 obs</name>
         <description>11 Ardea herodias
 9 Falco sparverius
 7 Verbascum blattaria
@@ -1427,7 +1427,7 @@
 4 Oemleria cerasiformis
 3 Cichorium intybus
 
- Cluster standouts:
+ Cluster10standouts:
 2.27 Thamnophis sirtalis
 2.20 Pseudacris regilla
 2.09 Haliaeetus leucocephalus
@@ -1481,7 +1481,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.23">
-        <name>Cluster 1 Area 23</name>
+        <name>Area23:217 obs</name>
         <description>27 Trillium ovatum
 12 Tsuga heterophylla
 9 Polystichum munitum
@@ -1493,7 +1493,7 @@
 6 Parnassius clodius
 6 Thuja plicata
 
- Cluster standouts:
+ Cluster1standouts:
 2.38 Gaultheria shallon
 2.14 Vaccinium parvifolium
 1.94 Tsuga heterophylla
@@ -1555,7 +1555,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.24">
-        <name>Cluster 5 Area 24</name>
+        <name>Area24:413 obs</name>
         <description>18 Toxicodendron diversilobum
 16 Polypodium glycyrrhiza
 14 Geranium robertianum
@@ -1567,7 +1567,7 @@
 10 Rubus parviflorus
 10 Symphoricarpos albus
 
- Cluster standouts:
+ Cluster5standouts:
 2.35 Ribes sanguineum
 2.31 Aquilegia formosa
 2.25 Selaginella douglasii
@@ -1621,7 +1621,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.25">
-        <name>Cluster 1 Area 25</name>
+        <name>Area25:564 obs</name>
         <description>24 Calochortus subalpinus
 24 Xerophyllum tenax
 16 Erigeron glacialis
@@ -1633,7 +1633,7 @@
 13 Lomatium martindalei
 11 Lilium columbianum
 
- Cluster standouts:
+ Cluster1standouts:
 2.38 Gaultheria shallon
 2.14 Vaccinium parvifolium
 1.94 Tsuga heterophylla
@@ -1688,7 +1688,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.26">
-        <name>Cluster 10 Area 26</name>
+        <name>Area26:244 obs</name>
         <description>28 Lathyrus latifolius
 26 Zonotrichia leucophrys
 11 Holodiscus discolor
@@ -1700,7 +1700,7 @@
 7 Pandion haliaetus
 7 Populus trichocarpa
 
- Cluster standouts:
+ Cluster10standouts:
 2.27 Thamnophis sirtalis
 2.20 Pseudacris regilla
 2.09 Haliaeetus leucocephalus
@@ -1755,7 +1755,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.27">
-        <name>Cluster 10 Area 27</name>
+        <name>Area27:159 obs</name>
         <description>7 Boisea rubrolineata
 7 Tanacetum vulgare
 6 Solanum dulcamara
@@ -1767,7 +1767,7 @@
 4 Monotropa uniflora
 4 Polypodium glycyrrhiza
 
- Cluster standouts:
+ Cluster10standouts:
 2.27 Thamnophis sirtalis
 2.20 Pseudacris regilla
 2.09 Haliaeetus leucocephalus
@@ -1823,7 +1823,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.28">
-        <name>Cluster 6 Area 28</name>
+        <name>Area28:150 obs</name>
         <description>11 Claytonia sibirica
 10 Dicentra formosa
 10 Lunaria annua
@@ -1835,7 +1835,7 @@
 4 Geranium robertianum
 4 Oemleria cerasiformis
 
- Cluster standouts:
+ Cluster6standouts:
 2.19 Dicentra formosa
 2.15 Digitalis purpurea
 2.15 Claytonia sibirica
@@ -1891,7 +1891,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.29">
-        <name>Cluster 5 Area 29</name>
+        <name>Area29:220 obs</name>
         <description>10 Heracleum maximum
 9 Delphinium trolliifolium
 8 Marah oregana
@@ -1903,7 +1903,7 @@
 6 Acer macrophyllum
 6 Rubus parviflorus
 
- Cluster standouts:
+ Cluster5standouts:
 2.35 Ribes sanguineum
 2.31 Aquilegia formosa
 2.25 Selaginella douglasii
@@ -1957,7 +1957,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.30">
-        <name>Cluster 6 Area 30</name>
+        <name>Area30:365 obs</name>
         <description>25 Lunaria annua
 21 Delphinium trolliifolium
 21 Dicentra formosa
@@ -1969,7 +1969,7 @@
 11 Oplopanax horridus
 10 Lilium columbianum
 
- Cluster standouts:
+ Cluster6standouts:
 2.19 Dicentra formosa
 2.15 Digitalis purpurea
 2.15 Claytonia sibirica
@@ -2022,7 +2022,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.31">
-        <name>Cluster 5 Area 31</name>
+        <name>Area31:126 obs</name>
         <description>7 Eriogonum compositum
 5 Gilia capitata
 4 Fraxinus latifolia
@@ -2034,7 +2034,7 @@
 3 Holodiscus discolor
 3 Marah oregana
 
- Cluster standouts:
+ Cluster5standouts:
 2.35 Ribes sanguineum
 2.31 Aquilegia formosa
 2.25 Selaginella douglasii
@@ -2090,7 +2090,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.32">
-        <name>Cluster 6 Area 32</name>
+        <name>Area32:185 obs</name>
         <description>32 Oncorhynchus kisutch
 10 Dicentra formosa
 10 Hydrophyllum tenuipes
@@ -2102,7 +2102,7 @@
 5 Heracleum maximum
 5 Lunaria annua
 
- Cluster standouts:
+ Cluster6standouts:
 2.19 Dicentra formosa
 2.15 Digitalis purpurea
 2.15 Claytonia sibirica
@@ -2156,7 +2156,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.33">
-        <name>Cluster 6 Area 33</name>
+        <name>Area33:644 obs</name>
         <description>50 Oplopanax horridus
 47 Ariolimax columbianus
 36 Corydalis scouleri
@@ -2168,7 +2168,7 @@
 23 Marah oregana
 19 Trillium ovatum
 
- Cluster standouts:
+ Cluster6standouts:
 2.19 Dicentra formosa
 2.15 Digitalis purpurea
 2.15 Claytonia sibirica
@@ -2221,7 +2221,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.34">
-        <name>Cluster 6 Area 34</name>
+        <name>Area34:189 obs</name>
         <description>7 Oplopanax horridus
 7 Sedum oreganum
 6 Aquilegia formosa
@@ -2233,7 +2233,7 @@
 5 Trillium ovatum
 4 Frangula purshiana
 
- Cluster standouts:
+ Cluster6standouts:
 2.19 Dicentra formosa
 2.15 Digitalis purpurea
 2.15 Claytonia sibirica
@@ -2288,7 +2288,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.35">
-        <name>Cluster 6 Area 35</name>
+        <name>Area35:153 obs</name>
         <description>9 Adiantum aleuticum
 8 Dicentra formosa
 8 Geranium robertianum
@@ -2300,7 +2300,7 @@
 4 Holodiscus discolor
 4 Mycelis muralis
 
- Cluster standouts:
+ Cluster6standouts:
 2.19 Dicentra formosa
 2.15 Digitalis purpurea
 2.15 Claytonia sibirica
@@ -2353,7 +2353,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.36">
-        <name>Cluster 5 Area 36</name>
+        <name>Area36:439 obs</name>
         <description>23 Trillium ovatum
 17 Geranium robertianum
 15 Aquilegia formosa
@@ -2365,7 +2365,7 @@
 12 Maianthemum racemosum
 12 Rubus parviflorus
 
- Cluster standouts:
+ Cluster5standouts:
 2.35 Ribes sanguineum
 2.31 Aquilegia formosa
 2.25 Selaginella douglasii
@@ -2420,7 +2420,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.37">
-        <name>Cluster 6 Area 37</name>
+        <name>Area37:155 obs</name>
         <description>10 Heracleum maximum
 10 Synthyris reniformis
 7 Rubus parviflorus
@@ -2432,7 +2432,7 @@
 4 Acer circinatum
 4 Adiantum aleuticum
 
- Cluster standouts:
+ Cluster6standouts:
 2.19 Dicentra formosa
 2.15 Digitalis purpurea
 2.15 Claytonia sibirica
@@ -2487,7 +2487,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.38">
-        <name>Cluster 5 Area 38</name>
+        <name>Area38:128 obs</name>
         <description>6 Ribes sanguineum
 5 Aquilegia formosa
 5 Maianthemum racemosum
@@ -2499,7 +2499,7 @@
 4 Lilium columbianum
 4 Thamnophis ordinoides
 
- Cluster standouts:
+ Cluster5standouts:
 2.35 Ribes sanguineum
 2.31 Aquilegia formosa
 2.25 Selaginella douglasii
@@ -2552,7 +2552,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.39">
-        <name>Cluster 5 Area 39</name>
+        <name>Area39:116 obs</name>
         <description>9 Aquilegia formosa
 5 Geranium robertianum
 5 Prosartes hookeri
@@ -2564,7 +2564,7 @@
 3 Actaea rubra
 3 Cardamine nuttallii
 
- Cluster standouts:
+ Cluster5standouts:
 2.35 Ribes sanguineum
 2.31 Aquilegia formosa
 2.25 Selaginella douglasii
@@ -2620,7 +2620,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.40">
-        <name>Cluster 5 Area 40</name>
+        <name>Area40:224 obs</name>
         <description>12 Chamaenerion angustifolium
 8 Holodiscus discolor
 8 Lilium columbianum
@@ -2632,7 +2632,7 @@
 5 Apocynum androsaemifolium
 5 Cathartes aura
 
- Cluster standouts:
+ Cluster5standouts:
 2.35 Ribes sanguineum
 2.31 Aquilegia formosa
 2.25 Selaginella douglasii
@@ -2689,7 +2689,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.41">
-        <name>Cluster 1 Area 41</name>
+        <name>Area41:1286 obs</name>
         <description>46 Lobaria oregana
 34 Tsuga heterophylla
 32 Mahonia nervosa
@@ -2701,7 +2701,7 @@
 23 Taricha granulosa
 22 Petasites frigidus
 
- Cluster standouts:
+ Cluster1standouts:
 2.38 Gaultheria shallon
 2.14 Vaccinium parvifolium
 1.94 Tsuga heterophylla
@@ -2759,7 +2759,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.42">
-        <name>Cluster 1 Area 42</name>
+        <name>Area42:713 obs</name>
         <description>25 Chamaenerion angustifolium
 22 Gaultheria shallon
 19 Anaphalis margaritacea
@@ -2771,7 +2771,7 @@
 13 Rubus parviflorus
 10 Cytisus scoparius
 
- Cluster standouts:
+ Cluster1standouts:
 2.38 Gaultheria shallon
 2.14 Vaccinium parvifolium
 1.94 Tsuga heterophylla
@@ -2825,7 +2825,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.43">
-        <name>Cluster 1 Area 43</name>
+        <name>Area43:122 obs</name>
         <description>10 Trillium ovatum
 9 Dicentra formosa
 5 Oxalis oregana
@@ -2837,7 +2837,7 @@
 4 Petasites frigidus
 4 Rubus parviflorus
 
- Cluster standouts:
+ Cluster1standouts:
 2.38 Gaultheria shallon
 2.14 Vaccinium parvifolium
 1.94 Tsuga heterophylla
@@ -2894,7 +2894,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.44">
-        <name>Cluster 11 Area 44</name>
+        <name>Area44:263 obs</name>
         <description>14 Taricha granulosa
 9 Rhododendron macrophyllum
 8 Trillium ovatum
@@ -2906,7 +2906,7 @@
 5 Anaphalis margaritacea
 5 Arctostaphylos nevadensis
 
- Cluster standouts:
+ Cluster11standouts:
 2.58 Rhododendron macrophyllum
 2.55 Cornus unalaschkensis
 2.31 Lysichiton americanus
@@ -2960,7 +2960,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.45">
-        <name>Cluster 11 Area 45</name>
+        <name>Area45:742 obs</name>
         <description>26 Cornus unalaschkensis
 25 Cytisus scoparius
 25 Xerophyllum tenax
@@ -2972,7 +2972,7 @@
 14 Linnaea borealis
 14 Rubus parviflorus
 
- Cluster standouts:
+ Cluster11standouts:
 2.58 Rhododendron macrophyllum
 2.55 Cornus unalaschkensis
 2.31 Lysichiton americanus
@@ -3027,7 +3027,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.46">
-        <name>Cluster 5 Area 46</name>
+        <name>Area46:673 obs</name>
         <description>31 Aquilegia formosa
 26 Geranium robertianum
 24 Rubus parviflorus
@@ -3039,7 +3039,7 @@
 16 Ribes sanguineum
 15 Castilleja hispida
 
- Cluster standouts:
+ Cluster5standouts:
 2.35 Ribes sanguineum
 2.31 Aquilegia formosa
 2.25 Selaginella douglasii
@@ -3093,7 +3093,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.47">
-        <name>Cluster 1 Area 47</name>
+        <name>Area47:319 obs</name>
         <description>39 Tsuga heterophylla
 19 Abies procera
 18 Gaultheria shallon
@@ -3105,7 +3105,7 @@
 10 Goodyera oblongifolia
 9 Thuja plicata
 
- Cluster standouts:
+ Cluster1standouts:
 2.38 Gaultheria shallon
 2.14 Vaccinium parvifolium
 1.94 Tsuga heterophylla
@@ -3160,7 +3160,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.48">
-        <name>Cluster 1 Area 48</name>
+        <name>Area48:165 obs</name>
         <description>6 Chamaenerion angustifolium
 5 Monotropa uniflora
 4 Acer macrophyllum
@@ -3172,7 +3172,7 @@
 4 Penstemon rupicola
 4 Sedum spathulifolium
 
- Cluster standouts:
+ Cluster1standouts:
 2.38 Gaultheria shallon
 2.14 Vaccinium parvifolium
 1.94 Tsuga heterophylla
@@ -3224,7 +3224,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.49">
-        <name>Cluster 3 Area 49</name>
+        <name>Area49:436 obs</name>
         <description>19 Pterospora andromedea
 17 Physocarpus capitatus
 15 Aquilegia formosa
@@ -3236,7 +3236,7 @@
 11 Collomia grandiflora
 11 Lilium columbianum
 
- Cluster standouts:
+ Cluster3standouts:
 2.78 Lathyrus latifolius
 2.28 Cichorium intybus
 2.12 Holodiscus discolor
@@ -3289,7 +3289,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.50">
-        <name>Cluster 5 Area 50</name>
+        <name>Area50:275 obs</name>
         <description>14 Trillium ovatum
 11 Oplopanax horridus
 11 Rubus spectabilis
@@ -3301,7 +3301,7 @@
 6 Harpaphe haydeniana
 6 Phacelia nemoralis
 
- Cluster standouts:
+ Cluster5standouts:
 2.35 Ribes sanguineum
 2.31 Aquilegia formosa
 2.25 Selaginella douglasii
@@ -3353,7 +3353,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.51">
-        <name>Cluster 1 Area 51</name>
+        <name>Area51:399 obs</name>
         <description>13 Lomatium martindalei
 11 Goodyera oblongifolia
 10 Erythranthe alsinoides
@@ -3365,7 +3365,7 @@
 8 Trillium ovatum
 7 Cardamine nuttallii
 
- Cluster standouts:
+ Cluster1standouts:
 2.38 Gaultheria shallon
 2.14 Vaccinium parvifolium
 1.94 Tsuga heterophylla
@@ -3424,7 +3424,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.52">
-        <name>Cluster 5 Area 52</name>
+        <name>Area52:834 obs</name>
         <description>51 Aquilegia formosa
 36 Geranium robertianum
 33 Adiantum aleuticum
@@ -3436,7 +3436,7 @@
 23 Dicentra formosa
 23 Toxicodendron diversilobum
 
- Cluster standouts:
+ Cluster5standouts:
 2.35 Ribes sanguineum
 2.31 Aquilegia formosa
 2.25 Selaginella douglasii
@@ -3491,7 +3491,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.53">
-        <name>Cluster 5 Area 53</name>
+        <name>Area53:308 obs</name>
         <description>25 Geranium robertianum
 15 Claytonia sibirica
 13 Oncorhynchus kisutch
@@ -3503,7 +3503,7 @@
 8 Hydrophyllum tenuipes
 8 Symphoricarpos albus
 
- Cluster standouts:
+ Cluster5standouts:
 2.35 Ribes sanguineum
 2.31 Aquilegia formosa
 2.25 Selaginella douglasii
@@ -3558,7 +3558,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.54">
-        <name>Cluster 5 Area 54</name>
+        <name>Area54:15 obs</name>
         <description>2 Ribes sanguineum
 1 Ariolimax columbianus
 1 Corvus corax
@@ -3570,7 +3570,7 @@
 1 Phacelia nemoralis
 1 Prosartes hookeri
 
- Cluster standouts:
+ Cluster5standouts:
 2.35 Ribes sanguineum
 2.31 Aquilegia formosa
 2.25 Selaginella douglasii
@@ -3625,7 +3625,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.55">
-        <name>Cluster 5 Area 55</name>
+        <name>Area55:690 obs</name>
         <description>41 Chamaenerion angustifolium
 36 Geranium robertianum
 35 Marah oregana
@@ -3637,7 +3637,7 @@
 19 Rubus parviflorus
 19 Sedum spathulifolium
 
- Cluster standouts:
+ Cluster5standouts:
 2.35 Ribes sanguineum
 2.31 Aquilegia formosa
 2.25 Selaginella douglasii
@@ -3691,7 +3691,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.56">
-        <name>Cluster 5 Area 56</name>
+        <name>Area56:246 obs</name>
         <description>29 Rubus parviflorus
 21 Geranium robertianum
 18 Claytonia sibirica
@@ -3703,7 +3703,7 @@
 8 Polystichum munitum
 6 Heracleum maximum
 
- Cluster standouts:
+ Cluster5standouts:
 2.35 Ribes sanguineum
 2.31 Aquilegia formosa
 2.25 Selaginella douglasii
@@ -3755,7 +3755,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.57">
-        <name>Cluster 5 Area 57</name>
+        <name>Area57:341 obs</name>
         <description>15 Corydalis scouleri
 12 Nothochelone nemorosa
 11 Dicentra formosa
@@ -3767,7 +3767,7 @@
 7 Claytonia sibirica
 7 Mahonia nervosa
 
- Cluster standouts:
+ Cluster5standouts:
 2.35 Ribes sanguineum
 2.31 Aquilegia formosa
 2.25 Selaginella douglasii
@@ -3822,7 +3822,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.58">
-        <name>Cluster 5 Area 58</name>
+        <name>Area58:880 obs</name>
         <description>32 Rubus parviflorus
 27 Anaphalis margaritacea
 23 Mahonia nervosa
@@ -3834,7 +3834,7 @@
 18 Acer circinatum
 18 Maianthemum racemosum
 
- Cluster standouts:
+ Cluster5standouts:
 2.35 Ribes sanguineum
 2.31 Aquilegia formosa
 2.25 Selaginella douglasii
@@ -3889,7 +3889,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.59">
-        <name>Cluster 11 Area 59</name>
+        <name>Area59:337 obs</name>
         <description>18 Cornus unalaschkensis
 14 Rhododendron menziesii
 13 Rhododendron macrophyllum
@@ -3901,7 +3901,7 @@
 11 Linnaea borealis
 11 Oplopanax horridus
 
- Cluster standouts:
+ Cluster11standouts:
 2.58 Rhododendron macrophyllum
 2.55 Cornus unalaschkensis
 2.31 Lysichiton americanus
@@ -3960,7 +3960,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.60">
-        <name>Cluster 11 Area 60</name>
+        <name>Area60:419 obs</name>
         <description>42 Penstemon rupicola
 24 Erythronium montanum
 20 Lomatium martindalei
@@ -3972,7 +3972,7 @@
 13 Corallorhiza mertensiana
 12 Penstemon cardwellii
 
- Cluster standouts:
+ Cluster11standouts:
 2.58 Rhododendron macrophyllum
 2.55 Cornus unalaschkensis
 2.31 Lysichiton americanus
@@ -4025,7 +4025,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.61">
-        <name>Cluster 5 Area 61</name>
+        <name>Area61:244 obs</name>
         <description>13 Aquilegia formosa
 11 Geranium robertianum
 10 Sedum spathulifolium
@@ -4037,7 +4037,7 @@
 6 Gilia capitata
 6 Holodiscus discolor
 
- Cluster standouts:
+ Cluster5standouts:
 2.35 Ribes sanguineum
 2.31 Aquilegia formosa
 2.25 Selaginella douglasii
@@ -4092,7 +4092,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.62">
-        <name>Cluster 6 Area 62</name>
+        <name>Area62:674 obs</name>
         <description>29 Taricha granulosa
 28 Impatiens capensis
 26 Trillium ovatum
@@ -4104,7 +4104,7 @@
 16 Dicentra formosa
 13 Gaultheria shallon
 
- Cluster standouts:
+ Cluster6standouts:
 2.19 Dicentra formosa
 2.15 Digitalis purpurea
 2.15 Claytonia sibirica
@@ -4158,7 +4158,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.63">
-        <name>Cluster 5 Area 63</name>
+        <name>Area63:187 obs</name>
         <description>13 Dicentra formosa
 10 Ribes sanguineum
 7 Chamaenerion angustifolium
@@ -4170,7 +4170,7 @@
 4 Dicamptodon tenebrosus
 4 Heuchera micrantha
 
- Cluster standouts:
+ Cluster5standouts:
 2.35 Ribes sanguineum
 2.31 Aquilegia formosa
 2.25 Selaginella douglasii
@@ -4224,7 +4224,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.64">
-        <name>Cluster 1 Area 64</name>
+        <name>Area64:252 obs</name>
         <description>10 Clintonia uniflora
 10 Trillium ovatum
 8 Xerophyllum tenax
@@ -4236,7 +4236,7 @@
 6 Nymphalis californica
 5 Actaea rubra
 
- Cluster standouts:
+ Cluster1standouts:
 2.38 Gaultheria shallon
 2.14 Vaccinium parvifolium
 1.94 Tsuga heterophylla
@@ -4289,7 +4289,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.65">
-        <name>Cluster 1 Area 65</name>
+        <name>Area65:342 obs</name>
         <description>14 Fomitopsis mounceae
 13 Trillium ovatum
 11 Mahonia nervosa
@@ -4301,7 +4301,7 @@
 9 Goodyera oblongifolia
 8 Digitalis purpurea
 
- Cluster standouts:
+ Cluster1standouts:
 2.38 Gaultheria shallon
 2.14 Vaccinium parvifolium
 1.94 Tsuga heterophylla
@@ -4357,7 +4357,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.66">
-        <name>Cluster 5 Area 66</name>
+        <name>Area66:641 obs</name>
         <description>34 Geranium robertianum
 27 Tellima grandiflora
 23 Rubus parviflorus
@@ -4369,7 +4369,7 @@
 15 Maianthemum racemosum
 14 Claytonia sibirica
 
- Cluster standouts:
+ Cluster5standouts:
 2.35 Ribes sanguineum
 2.31 Aquilegia formosa
 2.25 Selaginella douglasii
@@ -4425,7 +4425,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.67">
-        <name>Cluster 5 Area 67</name>
+        <name>Area67:122 obs</name>
         <description>14 Lilium columbianum
 7 Ribes sanguineum
 6 Chamaenerion angustifolium
@@ -4437,7 +4437,7 @@
 3 Daucus carota
 3 Gilia capitata
 
- Cluster standouts:
+ Cluster5standouts:
 2.35 Ribes sanguineum
 2.31 Aquilegia formosa
 2.25 Selaginella douglasii
@@ -4489,7 +4489,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.68">
-        <name>Cluster 1 Area 68</name>
+        <name>Area68:167 obs</name>
         <description>6 Maianthemum racemosum
 5 Anemone oregana
 5 Rubus parviflorus
@@ -4501,7 +4501,7 @@
 4 Pedicularis racemosa
 4 Penstemon cardwellii
 
- Cluster standouts:
+ Cluster1standouts:
 2.38 Gaultheria shallon
 2.14 Vaccinium parvifolium
 1.94 Tsuga heterophylla
@@ -4556,7 +4556,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.69">
-        <name>Cluster 5 Area 69</name>
+        <name>Area69:131 obs</name>
         <description>9 Dicentra formosa
 9 Rubus parviflorus
 6 Pseudotsuga menziesii
@@ -4568,7 +4568,7 @@
 3 Chamaenerion angustifolium
 3 Lysimachia latifolia
 
- Cluster standouts:
+ Cluster5standouts:
 2.35 Ribes sanguineum
 2.31 Aquilegia formosa
 2.25 Selaginella douglasii
@@ -4622,7 +4622,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.70">
-        <name>Cluster 1 Area 70</name>
+        <name>Area70:200 obs</name>
         <description>9 Rubus parviflorus
 7 Aquilegia formosa
 7 Lomatium martindalei
@@ -4634,7 +4634,7 @@
 5 Rubus spectabilis
 5 Trillium ovatum
 
- Cluster standouts:
+ Cluster1standouts:
 2.38 Gaultheria shallon
 2.14 Vaccinium parvifolium
 1.94 Tsuga heterophylla
@@ -4689,7 +4689,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.71">
-        <name>Cluster 3 Area 71</name>
+        <name>Area71:233 obs</name>
         <description>14 Lathyrus latifolius
 11 Branta canadensis
 9 Toxicodendron diversilobum
@@ -4701,7 +4701,7 @@
 6 Tanacetum vulgare
 5 Holodiscus discolor
 
- Cluster standouts:
+ Cluster3standouts:
 2.78 Lathyrus latifolius
 2.28 Cichorium intybus
 2.12 Holodiscus discolor
@@ -4755,7 +4755,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.72">
-        <name>Cluster 8 Area 72</name>
+        <name>Area72:519 obs</name>
         <description>26 Sedum spathulifolium
 21 Fritillaria affinis
 20 Mahonia nervosa
@@ -4767,7 +4767,7 @@
 12 Selaginella wallacei
 11 Adenocaulon bicolor
 
- Cluster standouts:
+ Cluster8standouts:
 2.31 Sedum spathulifolium
 2.03 Petasites frigidus
 1.91 Cinclus mexicanus
@@ -4822,7 +4822,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.73">
-        <name>Cluster 3 Area 73</name>
+        <name>Area73:303 obs</name>
         <description>18 Branta canadensis
 15 Euphagus cyanocephalus
 12 Lathyrus latifolius
@@ -4834,7 +4834,7 @@
 7 Pseudotsuga menziesii
 6 Eschscholzia californica
 
- Cluster standouts:
+ Cluster3standouts:
 2.78 Lathyrus latifolius
 2.28 Cichorium intybus
 2.12 Holodiscus discolor
@@ -4890,7 +4890,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.74">
-        <name>Cluster 5 Area 74</name>
+        <name>Area74:717 obs</name>
         <description>39 Euphagus cyanocephalus
 36 Anas platyrhynchos
 18 Cinclus mexicanus
@@ -4902,7 +4902,7 @@
 12 Corydalis scouleri
 12 Geranium robertianum
 
- Cluster standouts:
+ Cluster5standouts:
 2.35 Ribes sanguineum
 2.31 Aquilegia formosa
 2.25 Selaginella douglasii
@@ -4960,7 +4960,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.75">
-        <name>Cluster 5 Area 75</name>
+        <name>Area75:576 obs</name>
         <description>23 Sedum spathulifolium
 18 Corydalis scouleri
 16 Crocidium multicaule
@@ -4972,7 +4972,7 @@
 12 Sedum oreganum
 11 Pseudotsuga menziesii
 
- Cluster standouts:
+ Cluster5standouts:
 2.35 Ribes sanguineum
 2.31 Aquilegia formosa
 2.25 Selaginella douglasii
@@ -5029,7 +5029,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.76">
-        <name>Cluster 5 Area 76</name>
+        <name>Area76:188 obs</name>
         <description>8 Actaea rubra
 7 Chamaenerion angustifolium
 7 Prosartes hookeri
@@ -5041,7 +5041,7 @@
 6 Tellima grandiflora
 5 Anaphalis margaritacea
 
- Cluster standouts:
+ Cluster5standouts:
 2.35 Ribes sanguineum
 2.31 Aquilegia formosa
 2.25 Selaginella douglasii
@@ -5094,7 +5094,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.77">
-        <name>Cluster 1 Area 77</name>
+        <name>Area77:284 obs</name>
         <description>13 Digitalis purpurea
 11 Arctostaphylos columbiana
 11 Vaccinium parvifolium
@@ -5106,7 +5106,7 @@
 6 Chrysolepis chrysophylla
 6 Gaultheria shallon
 
- Cluster standouts:
+ Cluster1standouts:
 2.38 Gaultheria shallon
 2.14 Vaccinium parvifolium
 1.94 Tsuga heterophylla
@@ -5162,7 +5162,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.78">
-        <name>Cluster 1 Area 78</name>
+        <name>Area78:1066 obs</name>
         <description>50 Corydalis scouleri
 27 Ariolimax columbianus
 27 Trillium ovatum
@@ -5174,7 +5174,7 @@
 18 Mahonia nervosa
 17 Adiantum aleuticum
 
- Cluster standouts:
+ Cluster1standouts:
 2.38 Gaultheria shallon
 2.14 Vaccinium parvifolium
 1.94 Tsuga heterophylla
@@ -5228,7 +5228,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.79">
-        <name>Cluster 8 Area 79</name>
+        <name>Area79:225 obs</name>
         <description>23 Fritillaria affinis
 12 Dicentra cucullaria
 11 Dicentra formosa
@@ -5240,7 +5240,7 @@
 7 Fragaria vesca
 7 Occidryas colon
 
- Cluster standouts:
+ Cluster8standouts:
 2.31 Sedum spathulifolium
 2.03 Petasites frigidus
 1.91 Cinclus mexicanus
@@ -5295,7 +5295,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.80">
-        <name>Cluster 6 Area 80</name>
+        <name>Area80:141 obs</name>
         <description>8 Rubus parviflorus
 5 Dicentra formosa
 5 Maianthemum racemosum
@@ -5307,7 +5307,7 @@
 4 Mahonia nervosa
 4 Tanacetum vulgare
 
- Cluster standouts:
+ Cluster6standouts:
 2.19 Dicentra formosa
 2.15 Digitalis purpurea
 2.15 Claytonia sibirica
@@ -5361,7 +5361,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.81">
-        <name>Cluster 1 Area 81</name>
+        <name>Area81:854 obs</name>
         <description>31 Digitalis purpurea
 26 Polystichum munitum
 23 Rubus spectabilis
@@ -5373,7 +5373,7 @@
 18 Corydalis scouleri
 18 Maianthemum racemosum
 
- Cluster standouts:
+ Cluster1standouts:
 2.38 Gaultheria shallon
 2.14 Vaccinium parvifolium
 1.94 Tsuga heterophylla
@@ -5427,7 +5427,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.82">
-        <name>Cluster 8 Area 82</name>
+        <name>Area82:154 obs</name>
         <description>10 Cinclus mexicanus
 8 Marah oregana
 7 Acer macrophyllum
@@ -5439,7 +5439,7 @@
 4 Petasites frigidus
 4 Pseudotsuga menziesii
 
- Cluster standouts:
+ Cluster8standouts:
 2.31 Sedum spathulifolium
 2.03 Petasites frigidus
 1.91 Cinclus mexicanus
@@ -5492,7 +5492,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.83">
-        <name>Cluster 8 Area 83</name>
+        <name>Area83:140 obs</name>
         <description>52 Oncorhynchus kisutch
 10 Pandion haliaetus
 4 Toxicodendron diversilobum
@@ -5504,7 +5504,7 @@
 2 Haliaeetus leucocephalus
 2 Lilium columbianum
 
- Cluster standouts:
+ Cluster8standouts:
 2.31 Sedum spathulifolium
 2.03 Petasites frigidus
 1.91 Cinclus mexicanus
@@ -5558,7 +5558,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.84">
-        <name>Cluster 1 Area 84</name>
+        <name>Area84:579 obs</name>
         <description>17 Rhododendron macrophyllum
 14 Cornus unalaschkensis
 13 Monotropa uniflora
@@ -5570,7 +5570,7 @@
 10 Rhododendron menziesii
 10 Tiarella trifoliata
 
- Cluster standouts:
+ Cluster1standouts:
 2.38 Gaultheria shallon
 2.14 Vaccinium parvifolium
 1.94 Tsuga heterophylla
@@ -5624,7 +5624,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.85">
-        <name>Cluster 9 Area 85</name>
+        <name>Area85:665 obs</name>
         <description>23 Luetkea pectinata
 23 Xerophyllum tenax
 17 Erythranthe lewisii
@@ -5636,7 +5636,7 @@
 13 Chamaenerion angustifolium
 13 Thamnophis sirtalis
 
- Cluster standouts:
+ Cluster9standouts:
 2.82 Calochortus subalpinus
 2.78 Tsuga mertensiana
 1.99 Nymphalis californica
@@ -5692,7 +5692,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.86">
-        <name>Cluster 1 Area 86</name>
+        <name>Area86:527 obs</name>
         <description>33 Rhododendron macrophyllum
 29 Gaultheria shallon
 18 Oplopanax horridus
@@ -5704,7 +5704,7 @@
 11 Trillium ovatum
 11 Vaccinium parvifolium
 
- Cluster standouts:
+ Cluster1standouts:
 2.38 Gaultheria shallon
 2.14 Vaccinium parvifolium
 1.94 Tsuga heterophylla
@@ -5763,7 +5763,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.87">
-        <name>Cluster 8 Area 87</name>
+        <name>Area87:34 obs</name>
         <description>7 Adiantum aleuticum
 3 Lonicera ciliosa
 3 Petasites frigidus
@@ -5775,7 +5775,7 @@
 1 Collinsia grandiflora
 1 Corylus cornuta
 
- Cluster standouts:
+ Cluster8standouts:
 2.31 Sedum spathulifolium
 2.03 Petasites frigidus
 1.91 Cinclus mexicanus
@@ -5828,7 +5828,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.88">
-        <name>Cluster 1 Area 88</name>
+        <name>Area88:525 obs</name>
         <description>17 Calypso bulbosa
 14 Paranemone deltoidea
 13 Anemone oregana
@@ -5840,7 +5840,7 @@
 11 Gaultheria shallon
 11 Linnaea borealis
 
- Cluster standouts:
+ Cluster1standouts:
 2.38 Gaultheria shallon
 2.14 Vaccinium parvifolium
 1.94 Tsuga heterophylla
@@ -5897,7 +5897,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.89">
-        <name>Cluster 5 Area 89</name>
+        <name>Area89:587 obs</name>
         <description>26 Geranium robertianum
 22 Aquilegia formosa
 19 Lilium columbianum
@@ -5909,7 +5909,7 @@
 13 Trillium ovatum
 12 Polystichum munitum
 
- Cluster standouts:
+ Cluster5standouts:
 2.35 Ribes sanguineum
 2.31 Aquilegia formosa
 2.25 Selaginella douglasii
@@ -5966,7 +5966,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.90">
-        <name>Cluster 8 Area 90</name>
+        <name>Area90:344 obs</name>
         <description>14 Erythronium grandiflorum
 10 Ribes sanguineum
 9 Anemone oregana
@@ -5978,7 +5978,7 @@
 7 Sedum spathulifolium
 6 Campanula scouleri
 
- Cluster standouts:
+ Cluster8standouts:
 2.31 Sedum spathulifolium
 2.03 Petasites frigidus
 1.91 Cinclus mexicanus
@@ -6034,7 +6034,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.91">
-        <name>Cluster 8 Area 91</name>
+        <name>Area91:21 obs</name>
         <description>9 Petasites frigidus
 1 Adiantum aleuticum
 1 Chrysolepis chrysophylla
@@ -6046,7 +6046,7 @@
 1 Oemleria cerasiformis
 1 Papilio eurymedon
 
- Cluster standouts:
+ Cluster8standouts:
 2.31 Sedum spathulifolium
 2.03 Petasites frigidus
 1.91 Cinclus mexicanus
@@ -6099,7 +6099,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.92">
-        <name>Cluster 8 Area 92</name>
+        <name>Area92:229 obs</name>
         <description>18 Quercus garryana
 12 Valeriana congesta
 11 Allium acuminatum
@@ -6111,7 +6111,7 @@
 6 Actaea rubra
 6 Gilia capitata
 
- Cluster standouts:
+ Cluster8standouts:
 2.31 Sedum spathulifolium
 2.03 Petasites frigidus
 1.91 Cinclus mexicanus
@@ -6165,7 +6165,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.93">
-        <name>Cluster 8 Area 93</name>
+        <name>Area93:495 obs</name>
         <description>17 Fritillaria affinis
 17 Pseudotsuga menziesii
 16 Quercus garryana
@@ -6177,7 +6177,7 @@
 9 Toxicodendron diversilobum
 8 Lilium columbianum
 
- Cluster standouts:
+ Cluster8standouts:
 2.31 Sedum spathulifolium
 2.03 Petasites frigidus
 1.91 Cinclus mexicanus
@@ -6233,7 +6233,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.94">
-        <name>Cluster 3 Area 94</name>
+        <name>Area94:171 obs</name>
         <description>10 Quercus garryana
 9 Pseudotsuga menziesii
 7 Cichorium intybus
@@ -6245,7 +6245,7 @@
 4 Pteridium aquilinum
 4 Ribes sanguineum
 
- Cluster standouts:
+ Cluster3standouts:
 2.78 Lathyrus latifolius
 2.28 Cichorium intybus
 2.12 Holodiscus discolor
@@ -6298,7 +6298,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.95">
-        <name>Cluster 8 Area 95</name>
+        <name>Area95:180 obs</name>
         <description>6 Penstemon rupicola
 6 Petasites frigidus
 6 Rhododendron macrophyllum
@@ -6310,7 +6310,7 @@
 4 Quercus garryana
 4 Rubus spectabilis
 
- Cluster standouts:
+ Cluster8standouts:
 2.31 Sedum spathulifolium
 2.03 Petasites frigidus
 1.91 Cinclus mexicanus
@@ -6366,7 +6366,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.96">
-        <name>Cluster 8 Area 96</name>
+        <name>Area96:286 obs</name>
         <description>17 Pseudotsuga menziesii
 12 Sedum spathulifolium
 9 Calypso bulbosa
@@ -6378,7 +6378,7 @@
 5 Ariolimax columbianus
 5 Mahonia nervosa
 
- Cluster standouts:
+ Cluster8standouts:
 2.31 Sedum spathulifolium
 2.03 Petasites frigidus
 1.91 Cinclus mexicanus
@@ -6433,7 +6433,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.97">
-        <name>Cluster 1 Area 97</name>
+        <name>Area97:366 obs</name>
         <description>15 Rhododendron macrophyllum
 14 Xerophyllum tenax
 13 Chrysolepis chrysophylla
@@ -6445,7 +6445,7 @@
 8 Acer circinatum
 8 Tsuga heterophylla
 
- Cluster standouts:
+ Cluster1standouts:
 2.38 Gaultheria shallon
 2.14 Vaccinium parvifolium
 1.94 Tsuga heterophylla
@@ -6502,7 +6502,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.98">
-        <name>Cluster 11 Area 98</name>
+        <name>Area98:261 obs</name>
         <description>23 Taricha granulosa
 19 Oplopanax horridus
 12 Cornus unalaschkensis
@@ -6514,7 +6514,7 @@
 6 Nymphalis californica
 6 Tsuga heterophylla
 
- Cluster standouts:
+ Cluster11standouts:
 2.58 Rhododendron macrophyllum
 2.55 Cornus unalaschkensis
 2.31 Lysichiton americanus
@@ -6567,7 +6567,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.99">
-        <name>Cluster 11 Area 99</name>
+        <name>Area99:238 obs</name>
         <description>15 Taricha granulosa
 14 Rhododendron macrophyllum
 10 Thuja plicata
@@ -6579,7 +6579,7 @@
 6 Trillium ovatum
 5 Abies amabilis
 
- Cluster standouts:
+ Cluster11standouts:
 2.58 Rhododendron macrophyllum
 2.55 Cornus unalaschkensis
 2.31 Lysichiton americanus
@@ -6633,7 +6633,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.100">
-        <name>Cluster 11 Area 100</name>
+        <name>Area100:279 obs</name>
         <description>19 Cornus unalaschkensis
 15 Rhododendron menziesii
 14 Oplopanax horridus
@@ -6645,7 +6645,7 @@
 7 Trillium ovatum
 7 Xerophyllum tenax
 
- Cluster standouts:
+ Cluster11standouts:
 2.58 Rhododendron macrophyllum
 2.55 Cornus unalaschkensis
 2.31 Lysichiton americanus
@@ -6702,7 +6702,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.101">
-        <name>Cluster 11 Area 101</name>
+        <name>Area101:820 obs</name>
         <description>40 Cornus unalaschkensis
 36 Chimaphila umbellata
 33 Xerophyllum tenax
@@ -6714,7 +6714,7 @@
 20 Paxistima myrsinites
 18 Lysichiton americanus
 
- Cluster standouts:
+ Cluster11standouts:
 2.58 Rhododendron macrophyllum
 2.55 Cornus unalaschkensis
 2.31 Lysichiton americanus
@@ -6773,7 +6773,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.102">
-        <name>Cluster 11 Area 102</name>
+        <name>Area102:429 obs</name>
         <description>27 Rhododendron macrophyllum
 27 Xerophyllum tenax
 24 Callospermophilus lateralis
@@ -6785,7 +6785,7 @@
 10 Tsuga mertensiana
 8 Lilium columbianum
 
- Cluster standouts:
+ Cluster11standouts:
 2.58 Rhododendron macrophyllum
 2.55 Cornus unalaschkensis
 2.31 Lysichiton americanus
@@ -6838,7 +6838,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.103">
-        <name>Cluster 11 Area 103</name>
+        <name>Area103:193 obs</name>
         <description>10 Rhododendron macrophyllum
 9 Chamaenerion angustifolium
 8 Nothochelone nemorosa
@@ -6850,7 +6850,7 @@
 5 Chrysolepis chrysophylla
 5 Linnaea borealis
 
- Cluster standouts:
+ Cluster11standouts:
 2.58 Rhododendron macrophyllum
 2.55 Cornus unalaschkensis
 2.31 Lysichiton americanus
@@ -6903,7 +6903,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.104">
-        <name>Cluster 11 Area 104</name>
+        <name>Area104:50 obs</name>
         <description>5 Goodyera oblongifolia
 4 Calypso bulbosa
 2 Chimaphila umbellata
@@ -6915,7 +6915,7 @@
 2 Vaccinium parvifolium
 1 Ariolimax columbianus
 
- Cluster standouts:
+ Cluster11standouts:
 2.58 Rhododendron macrophyllum
 2.55 Cornus unalaschkensis
 2.31 Lysichiton americanus
@@ -6968,7 +6968,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.105">
-        <name>Cluster 11 Area 105</name>
+        <name>Area105:259 obs</name>
         <description>14 Xerophyllum tenax
 13 Gentiana calycosa
 11 Erythronium montanum
@@ -6980,7 +6980,7 @@
 5 Sambucus racemosa
 4 Abies procera
 
- Cluster standouts:
+ Cluster11standouts:
 2.58 Rhododendron macrophyllum
 2.55 Cornus unalaschkensis
 2.31 Lysichiton americanus
@@ -7036,7 +7036,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.106">
-        <name>Cluster 11 Area 106</name>
+        <name>Area106:765 obs</name>
         <description>39 Rhododendron macrophyllum
 38 Cornus unalaschkensis
 26 Lysichiton americanus
@@ -7048,7 +7048,7 @@
 19 Sorbus sitchensis
 17 Spiraea splendens
 
- Cluster standouts:
+ Cluster11standouts:
 2.58 Rhododendron macrophyllum
 2.55 Cornus unalaschkensis
 2.31 Lysichiton americanus
@@ -7104,7 +7104,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.107">
-        <name>Cluster 11 Area 107</name>
+        <name>Area107:211 obs</name>
         <description>19 Cornus unalaschkensis
 15 Lysichiton americanus
 13 Struthiopteris spicant
@@ -7116,7 +7116,7 @@
 5 Petasites frigidus
 5 Rhododendron macrophyllum
 
- Cluster standouts:
+ Cluster11standouts:
 2.58 Rhododendron macrophyllum
 2.55 Cornus unalaschkensis
 2.31 Lysichiton americanus
@@ -7170,7 +7170,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.108">
-        <name>Cluster 11 Area 108</name>
+        <name>Area108:1015 obs</name>
         <description>42 Rhododendron macrophyllum
 38 Cornus unalaschkensis
 29 Erythronium montanum
@@ -7182,7 +7182,7 @@
 20 Abies amabilis
 20 Aquilegia formosa
 
- Cluster standouts:
+ Cluster11standouts:
 2.58 Rhododendron macrophyllum
 2.55 Cornus unalaschkensis
 2.31 Lysichiton americanus
@@ -7237,7 +7237,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.109">
-        <name>Cluster 3 Area 109</name>
+        <name>Area109:146 obs</name>
         <description>9 Senecio integerrimus
 5 Erythranthe alsinoides
 5 Paranemone deltoidea
@@ -7249,7 +7249,7 @@
 3 Fritillaria affinis
 3 Holodiscus discolor
 
- Cluster standouts:
+ Cluster3standouts:
 2.78 Lathyrus latifolius
 2.28 Cichorium intybus
 2.12 Holodiscus discolor
@@ -7302,7 +7302,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.110">
-        <name>Cluster 8 Area 110</name>
+        <name>Area110:236 obs</name>
         <description>8 Sedum spathulifolium
 7 Xerophyllum tenax
 6 Pseudotsuga menziesii
@@ -7314,7 +7314,7 @@
 4 Chamaenerion angustifolium
 4 Chimaphila umbellata
 
- Cluster standouts:
+ Cluster8standouts:
 2.31 Sedum spathulifolium
 2.03 Petasites frigidus
 1.91 Cinclus mexicanus
@@ -7370,7 +7370,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.111">
-        <name>Cluster 11 Area 111</name>
+        <name>Area111:502 obs</name>
         <description>25 Xerophyllum tenax
 19 Cornus unalaschkensis
 16 Trillium ovatum
@@ -7382,7 +7382,7 @@
 12 Rubus spectabilis
 11 Abies amabilis
 
- Cluster standouts:
+ Cluster11standouts:
 2.58 Rhododendron macrophyllum
 2.55 Cornus unalaschkensis
 2.31 Lysichiton americanus
@@ -7439,7 +7439,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.112">
-        <name>Cluster 11 Area 112</name>
+        <name>Area112:117 obs</name>
         <description>11 Oplopanax horridus
 8 Corallorhiza mertensiana
 6 Cornus unalaschkensis
@@ -7451,7 +7451,7 @@
 3 Corvus corax
 3 Gaultheria shallon
 
- Cluster standouts:
+ Cluster11standouts:
 2.58 Rhododendron macrophyllum
 2.55 Cornus unalaschkensis
 2.31 Lysichiton americanus
@@ -7504,7 +7504,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.113">
-        <name>Cluster 9 Area 113</name>
+        <name>Area113:386 obs</name>
         <description>16 Pulsatilla occidentalis
 15 Callospermophilus lateralis
 15 Erythranthe lewisii
@@ -7516,7 +7516,7 @@
 10 Eucephalus ledophyllus
 10 Penstemon davidsonii
 
- Cluster standouts:
+ Cluster9standouts:
 2.82 Calochortus subalpinus
 2.78 Tsuga mertensiana
 1.99 Nymphalis californica
@@ -7575,7 +7575,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.114">
-        <name>Cluster 11 Area 114</name>
+        <name>Area114:370 obs</name>
         <description>38 Anas platyrhynchos
 34 Taricha granulosa
 23 Cornus unalaschkensis
@@ -7587,7 +7587,7 @@
 12 Rhododendron menziesii
 10 Sorbus sitchensis
 
- Cluster standouts:
+ Cluster11standouts:
 2.58 Rhododendron macrophyllum
 2.55 Cornus unalaschkensis
 2.31 Lysichiton americanus
@@ -7642,7 +7642,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.115">
-        <name>Cluster 9 Area 115</name>
+        <name>Area115:822 obs</name>
         <description>59 Pulsatilla occidentalis
 56 Erythronium montanum
 35 Castilleja parviflora
@@ -7654,7 +7654,7 @@
 26 Xerophyllum tenax
 21 Spiraea splendens
 
- Cluster standouts:
+ Cluster9standouts:
 2.82 Calochortus subalpinus
 2.78 Tsuga mertensiana
 1.99 Nymphalis californica
@@ -7710,7 +7710,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.116">
-        <name>Cluster 11 Area 116</name>
+        <name>Area116:435 obs</name>
         <description>28 Lysichiton americanus
 21 Thuja plicata
 20 Cornus unalaschkensis
@@ -7722,7 +7722,7 @@
 11 Lonicera involucrata
 10 Abies amabilis
 
- Cluster standouts:
+ Cluster11standouts:
 2.58 Rhododendron macrophyllum
 2.55 Cornus unalaschkensis
 2.31 Lysichiton americanus
@@ -7778,7 +7778,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.117">
-        <name>Cluster 11 Area 117</name>
+        <name>Area117:140 obs</name>
         <description>8 Cornus unalaschkensis
 6 Linnaea borealis
 5 Abies amabilis
@@ -7790,7 +7790,7 @@
 4 Taricha granulosa
 4 Trillium ovatum
 
- Cluster standouts:
+ Cluster11standouts:
 2.58 Rhododendron macrophyllum
 2.55 Cornus unalaschkensis
 2.31 Lysichiton americanus
@@ -7843,7 +7843,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.118">
-        <name>Cluster 11 Area 118</name>
+        <name>Area118:295 obs</name>
         <description>13 Chrysolepis chrysophylla
 12 Perisoreus canadensis
 12 Xerophyllum tenax
@@ -7855,7 +7855,7 @@
 9 Monotropa hypopitys
 9 Nymphalis californica
 
- Cluster standouts:
+ Cluster11standouts:
 2.58 Rhododendron macrophyllum
 2.55 Cornus unalaschkensis
 2.31 Lysichiton americanus
@@ -7910,7 +7910,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.119">
-        <name>Cluster 9 Area 119</name>
+        <name>Area119:716 obs</name>
         <description>56 Calochortus subalpinus
 56 Calyptridium umbellatum
 48 Phlox diffusa
@@ -7922,7 +7922,7 @@
 32 Koenigia davisiae
 32 Pinus albicaulis
 
- Cluster standouts:
+ Cluster9standouts:
 2.82 Calochortus subalpinus
 2.78 Tsuga mertensiana
 1.99 Nymphalis californica
@@ -7976,7 +7976,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.120">
-        <name>Cluster 1 Area 120</name>
+        <name>Area120:224 obs</name>
         <description>6 Cornus nuttallii
 6 Maianthemum racemosum
 6 Paranemone deltoidea
@@ -7988,7 +7988,7 @@
 5 Occidryas colon
 5 Oplopanax horridus
 
- Cluster standouts:
+ Cluster1standouts:
 2.38 Gaultheria shallon
 2.14 Vaccinium parvifolium
 1.94 Tsuga heterophylla
@@ -8044,7 +8044,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.121">
-        <name>Cluster 9 Area 121</name>
+        <name>Area121:869 obs</name>
         <description>54 Calochortus subalpinus
 50 Luetkea pectinata
 39 Calyptridium umbellatum
@@ -8056,7 +8056,7 @@
 27 Pedicularis racemosa
 26 Erythranthe lewisii
 
- Cluster standouts:
+ Cluster9standouts:
 2.82 Calochortus subalpinus
 2.78 Tsuga mertensiana
 1.99 Nymphalis californica
@@ -8109,7 +8109,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.122">
-        <name>Cluster 11 Area 122</name>
+        <name>Area122:299 obs</name>
         <description>18 Lysichiton americanus
 14 Anas platyrhynchos
 11 Heracleum maximum
@@ -8121,7 +8121,7 @@
 7 Anaphalis margaritacea
 7 Cyanocitta stelleri
 
- Cluster standouts:
+ Cluster11standouts:
 2.58 Rhododendron macrophyllum
 2.55 Cornus unalaschkensis
 2.31 Lysichiton americanus
@@ -8173,7 +8173,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.123">
-        <name>Cluster 9 Area 123</name>
+        <name>Area123:326 obs</name>
         <description>24 Eriogonum umbellatum
 23 Calyptridium umbellatum
 23 Luetkea pectinata
@@ -8185,7 +8185,7 @@
 15 Juniperus communis
 13 Eucephalus ledophyllus
 
- Cluster standouts:
+ Cluster9standouts:
 2.82 Calochortus subalpinus
 2.78 Tsuga mertensiana
 1.99 Nymphalis californica
@@ -8240,7 +8240,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.124">
-        <name>Cluster 8 Area 124</name>
+        <name>Area124:507 obs</name>
         <description>22 Pseudotsuga menziesii
 21 Sedum spathulifolium
 16 Penstemon richardsonii
@@ -8252,7 +8252,7 @@
 9 Arctostaphylos columbiana
 9 Daucus carota
 
- Cluster standouts:
+ Cluster8standouts:
 2.31 Sedum spathulifolium
 2.03 Petasites frigidus
 1.91 Cinclus mexicanus
@@ -8308,7 +8308,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.125">
-        <name>Cluster 3 Area 125</name>
+        <name>Area125:137 obs</name>
         <description>7 Cichorium intybus
 7 Cytisus scoparius
 6 Andricus quercuscalifornicus
@@ -8320,7 +8320,7 @@
 4 Lathyrus latifolius
 4 Mahonia aquifolium
 
- Cluster standouts:
+ Cluster3standouts:
 2.78 Lathyrus latifolius
 2.28 Cichorium intybus
 2.12 Holodiscus discolor
@@ -8373,7 +8373,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.126">
-        <name>Cluster 11 Area 126</name>
+        <name>Area126:94 obs</name>
         <description>6 Trillium ovatum
 5 Cornus unalaschkensis
 5 Xerophyllum tenax
@@ -8385,7 +8385,7 @@
 2 Acer circinatum
 2 Achlys triphylla
 
- Cluster standouts:
+ Cluster11standouts:
 2.58 Rhododendron macrophyllum
 2.55 Cornus unalaschkensis
 2.31 Lysichiton americanus
@@ -8440,7 +8440,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.127">
-        <name>Cluster 8 Area 127</name>
+        <name>Area127:912 obs</name>
         <description>47 Fritillaria affinis
 36 Calypso bulbosa
 28 Dicentra cucullaria
@@ -8452,7 +8452,7 @@
 22 Mahonia nervosa
 21 Lithophragma parviflorum
 
- Cluster standouts:
+ Cluster8standouts:
 2.31 Sedum spathulifolium
 2.03 Petasites frigidus
 1.91 Cinclus mexicanus
@@ -8507,7 +8507,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.128">
-        <name>Cluster 8 Area 128</name>
+        <name>Area128:555 obs</name>
         <description>41 Dicamptodon tenebrosus
 23 Quercus garryana
 15 Tellima grandiflora
@@ -8519,7 +8519,7 @@
 11 Ensatina eschscholtzii
 9 Eriophyllum lanatum
 
- Cluster standouts:
+ Cluster8standouts:
 2.31 Sedum spathulifolium
 2.03 Petasites frigidus
 1.91 Cinclus mexicanus
@@ -8573,7 +8573,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.129">
-        <name>Cluster 3 Area 129</name>
+        <name>Area129:467 obs</name>
         <description>17 Holodiscus discolor
 13 Eriophyllum lanatum
 12 Calypso bulbosa
@@ -8585,7 +8585,7 @@
 8 Adelinia grandis
 8 Lilium washingtonianum
 
- Cluster standouts:
+ Cluster3standouts:
 2.78 Lathyrus latifolius
 2.28 Cichorium intybus
 2.12 Holodiscus discolor
@@ -8643,7 +8643,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.130">
-        <name>Cluster 11 Area 130</name>
+        <name>Area130:126 obs</name>
         <description>10 Xerophyllum tenax
 6 Chrysolepis chrysophylla
 6 Lilium washingtonianum
@@ -8655,7 +8655,7 @@
 4 Pseudotsuga menziesii
 3 Abies grandis
 
- Cluster standouts:
+ Cluster11standouts:
 2.58 Rhododendron macrophyllum
 2.55 Cornus unalaschkensis
 2.31 Lysichiton americanus
@@ -8708,7 +8708,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.131">
-        <name>Cluster 11 Area 131</name>
+        <name>Area131:230 obs</name>
         <description>10 Perisoreus canadensis
 7 Monotropa hypopitys
 7 Spiraea douglasii
@@ -8720,7 +8720,7 @@
 6 Tsuga heterophylla
 5 Chrysolepis chrysophylla
 
- Cluster standouts:
+ Cluster11standouts:
 2.58 Rhododendron macrophyllum
 2.55 Cornus unalaschkensis
 2.31 Lysichiton americanus
@@ -8775,7 +8775,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.132">
-        <name>Cluster 9 Area 132</name>
+        <name>Area132:180 obs</name>
         <description>22 Pinus contorta
 20 Lupinus lepidus
 15 Penstemon davidsonii
@@ -8787,7 +8787,7 @@
 6 Perisoreus canadensis
 4 Arctostaphylos nevadensis
 
- Cluster standouts:
+ Cluster9standouts:
 2.82 Calochortus subalpinus
 2.78 Tsuga mertensiana
 1.99 Nymphalis californica
@@ -8844,7 +8844,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.133">
-        <name>Cluster 8 Area 133</name>
+        <name>Area133:150 obs</name>
         <description>16 Ensatina eschscholtzii
 10 Calypso bulbosa
 9 Mahonia aquifolium
@@ -8856,7 +8856,7 @@
 3 Amelanchier alnifolia
 3 Anaphalis margaritacea
 
- Cluster standouts:
+ Cluster8standouts:
 2.31 Sedum spathulifolium
 2.03 Petasites frigidus
 1.91 Cinclus mexicanus
@@ -8908,7 +8908,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.134">
-        <name>Cluster 9 Area 134</name>
+        <name>Area134:339 obs</name>
         <description>15 Platanthera dilatata
 14 Tsuga mertensiana
 12 Clintonia uniflora
@@ -8920,7 +8920,7 @@
 9 Pinus albicaulis
 9 Valeriana sitchensis
 
- Cluster standouts:
+ Cluster9standouts:
 2.82 Calochortus subalpinus
 2.78 Tsuga mertensiana
 1.99 Nymphalis californica
@@ -8975,7 +8975,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.135">
-        <name>Cluster 11 Area 135</name>
+        <name>Area135:606 obs</name>
         <description>19 Acer circinatum
 19 Chrysolepis chrysophylla
 18 Holodiscus discolor
@@ -8987,7 +8987,7 @@
 14 Lilium washingtonianum
 13 Achlys triphylla
 
- Cluster standouts:
+ Cluster11standouts:
 2.58 Rhododendron macrophyllum
 2.55 Cornus unalaschkensis
 2.31 Lysichiton americanus
@@ -9043,7 +9043,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.136">
-        <name>Cluster 9 Area 136</name>
+        <name>Area136:41 obs</name>
         <description>5 Calyptridium umbellatum
 4 Pinus albicaulis
 3 Juniperus communis
@@ -9055,7 +9055,7 @@
 2 Pinus monticola
 1 Anaphalis margaritacea
 
- Cluster standouts:
+ Cluster9standouts:
 2.82 Calochortus subalpinus
 2.78 Tsuga mertensiana
 1.99 Nymphalis californica
@@ -9109,7 +9109,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.137">
-        <name>Cluster 9 Area 137</name>
+        <name>Area137:163 obs</name>
         <description>19 Pulsatilla occidentalis
 16 Calochortus subalpinus
 14 Castilleja suksdorfii
@@ -9121,7 +9121,7 @@
 5 Nothochelone nemorosa
 5 Veratrum viride
 
- Cluster standouts:
+ Cluster9standouts:
 2.82 Calochortus subalpinus
 2.78 Tsuga mertensiana
 1.99 Nymphalis californica
@@ -9174,7 +9174,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.138">
-        <name>Cluster 11 Area 138</name>
+        <name>Area138:332 obs</name>
         <description>27 Calypso bulbosa
 13 Anemone oregana
 12 Nymphalis californica
@@ -9186,7 +9186,7 @@
 6 Chrysolepis chrysophylla
 6 Corallorhiza maculata
 
- Cluster standouts:
+ Cluster11standouts:
 2.58 Rhododendron macrophyllum
 2.55 Cornus unalaschkensis
 2.31 Lysichiton americanus
@@ -9242,7 +9242,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.139">
-        <name>Cluster 9 Area 139</name>
+        <name>Area139:1164 obs</name>
         <description>115 Calochortus subalpinus
 63 Xerophyllum tenax
 56 Polemonium californicum
@@ -9254,7 +9254,7 @@
 29 Spiraea splendens
 27 Lilium washingtonianum
 
- Cluster standouts:
+ Cluster9standouts:
 2.82 Calochortus subalpinus
 2.78 Tsuga mertensiana
 1.99 Nymphalis californica
@@ -9307,7 +9307,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.140">
-        <name>Cluster 11 Area 140</name>
+        <name>Area140:342 obs</name>
         <description>10 Anemone oregana
 10 Lilium washingtonianum
 10 Pinus contorta
@@ -9319,7 +9319,7 @@
 7 Chrysolepis chrysophylla
 7 Trillium ovatum
 
- Cluster standouts:
+ Cluster11standouts:
 2.58 Rhododendron macrophyllum
 2.55 Cornus unalaschkensis
 2.31 Lysichiton americanus
@@ -9375,7 +9375,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.141">
-        <name>Cluster 7 Area 141</name>
+        <name>Area141:98 obs</name>
         <description>6 Purshia tridentata
 4 Lomatium nudicaule
 4 Pinus ponderosa
@@ -9387,7 +9387,7 @@
 2 Anemone oregana
 2 Celastrina ladon
 
- Cluster standouts:
+ Cluster7standouts:
 2.21 Sceloporus occidentalis
 2.20 Lomatium nudicaule
 2.00 Eriogonum compositum
@@ -9445,7 +9445,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.142">
-        <name>Cluster 3 Area 142</name>
+        <name>Area142:509 obs</name>
         <description>20 Physocarpus capitatus
 16 Chrysolepis chrysophylla
 15 Lilium columbianum
@@ -9457,7 +9457,7 @@
 12 Apocynum androsaemifolium
 12 Lonicera involucrata
 
- Cluster standouts:
+ Cluster3standouts:
 2.78 Lathyrus latifolius
 2.28 Cichorium intybus
 2.12 Holodiscus discolor
@@ -9510,7 +9510,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.143">
-        <name>Cluster 9 Area 143</name>
+        <name>Area143:196 obs</name>
         <description>12 Eriogonum umbellatum
 9 Eriophyllum lanatum
 8 Sceloporus occidentalis
@@ -9522,7 +9522,7 @@
 4 Celastrina ladon
 4 Erythronium grandiflorum
 
- Cluster standouts:
+ Cluster9standouts:
 2.82 Calochortus subalpinus
 2.78 Tsuga mertensiana
 1.99 Nymphalis californica
@@ -9576,7 +9576,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.144">
-        <name>Cluster 9 Area 144</name>
+        <name>Area144:321 obs</name>
         <description>24 Polemonium californicum
 23 Valeriana sitchensis
 19 Erigeron glacialis
@@ -9588,7 +9588,7 @@
 12 Lomatium martindalei
 8 Koenigia davisiae
 
- Cluster standouts:
+ Cluster9standouts:
 2.82 Calochortus subalpinus
 2.78 Tsuga mertensiana
 1.99 Nymphalis californica
@@ -9642,7 +9642,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.145">
-        <name>Cluster 3 Area 145</name>
+        <name>Area145:408 obs</name>
         <description>33 Ailanthus altissima
 12 Mahonia aquifolium
 11 Eschscholzia californica
@@ -9654,7 +9654,7 @@
 7 Centaurea cyanus
 7 Lunaria annua
 
- Cluster standouts:
+ Cluster3standouts:
 2.78 Lathyrus latifolius
 2.28 Cichorium intybus
 2.12 Holodiscus discolor
@@ -9709,7 +9709,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.146">
-        <name>Cluster 3 Area 146</name>
+        <name>Area146:134 obs</name>
         <description>11 Lathyrus latifolius
 7 Holodiscus discolor
 6 Mahonia aquifolium
@@ -9721,7 +9721,7 @@
 3 Aphelocoma californica
 3 Apis mellifera
 
- Cluster standouts:
+ Cluster3standouts:
 2.78 Lathyrus latifolius
 2.28 Cichorium intybus
 2.12 Holodiscus discolor
@@ -9775,7 +9775,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.147">
-        <name>Cluster 3 Area 147</name>
+        <name>Area147:462 obs</name>
         <description>38 Ailanthus altissima
 22 Aphelocoma californica
 22 Eschscholzia californica
@@ -9787,7 +9787,7 @@
 9 Centaurea cyanus
 9 Cornus sericea
 
- Cluster standouts:
+ Cluster3standouts:
 2.78 Lathyrus latifolius
 2.28 Cichorium intybus
 2.12 Holodiscus discolor
@@ -9841,7 +9841,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.148">
-        <name>Cluster 3 Area 148</name>
+        <name>Area148:612 obs</name>
         <description>24 Quercus garryana
 19 Odocoileus hemionus
 14 Icaricia icarioides
@@ -9853,7 +9853,7 @@
 11 Castilleja hispida
 11 Erynnis propertius
 
- Cluster standouts:
+ Cluster3standouts:
 2.78 Lathyrus latifolius
 2.28 Cichorium intybus
 2.12 Holodiscus discolor
@@ -9910,7 +9910,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.149">
-        <name>Cluster 3 Area 149</name>
+        <name>Area149:993 obs</name>
         <description>41 Eschscholzia californica
 35 Adelinia grandis
 27 Toxicodendron diversilobum
@@ -9922,7 +9922,7 @@
 18 Acer macrophyllum
 17 Eriogonum compositum
 
- Cluster standouts:
+ Cluster3standouts:
 2.78 Lathyrus latifolius
 2.28 Cichorium intybus
 2.12 Holodiscus discolor
@@ -9978,7 +9978,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.150">
-        <name>Cluster 4 Area 150</name>
+        <name>Area150:323 obs</name>
         <description>13 Adelinia grandis
 11 Castilleja hispida
 11 Quercus garryana
@@ -9990,7 +9990,7 @@
 8 Lomatium macrocarpum
 8 Lomatium nudicaule
 
- Cluster standouts:
+ Cluster4standouts:
 2.49 Castilleja hispida
 2.48 Hydrophyllum capitatum
 2.16 Lomatium columbianum
@@ -10048,7 +10048,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.151">
-        <name>Cluster 9 Area 151</name>
+        <name>Area151:76 obs</name>
         <description>8 Tsuga mertensiana
 6 Luetkea pectinata
 6 Senecio triangularis
@@ -10060,7 +10060,7 @@
 3 Pterospora andromedea
 2 Castilleja suksdorfii
 
- Cluster standouts:
+ Cluster9standouts:
 2.82 Calochortus subalpinus
 2.78 Tsuga mertensiana
 1.99 Nymphalis californica
@@ -10113,7 +10113,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.152">
-        <name>Cluster 4 Area 152</name>
+        <name>Area152:536 obs</name>
         <description>49 Lomatium columbianum
 34 Lomatium klickitatense
 25 Olsynium douglasii
@@ -10125,7 +10125,7 @@
 12 Amelanchier alnifolia
 12 Lomatium triternatum
 
- Cluster standouts:
+ Cluster4standouts:
 2.49 Castilleja hispida
 2.48 Hydrophyllum capitatum
 2.16 Lomatium columbianum
@@ -10180,7 +10180,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.153">
-        <name>Cluster 4 Area 153</name>
+        <name>Area153:232 obs</name>
         <description>14 Adelinia grandis
 12 Fritillaria pudica
 10 Marah oregana
@@ -10192,7 +10192,7 @@
 7 Quercus garryana
 7 Triteleia grandiflora
 
- Cluster standouts:
+ Cluster4standouts:
 2.49 Castilleja hispida
 2.48 Hydrophyllum capitatum
 2.16 Lomatium columbianum
@@ -10247,7 +10247,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.154">
-        <name>Cluster 2 Area 154</name>
+        <name>Area154:613 obs</name>
         <description>57 Lomatium klickitatense
 42 Olsynium douglasii
 37 Centaurea cyanus
@@ -10259,7 +10259,7 @@
 17 Lomatium columbianum
 14 Lithophragma parviflorum
 
- Cluster standouts:
+ Cluster2standouts:
 2.35 Olsynium douglasii
 2.21 Centaurea cyanus
 2.14 Triteleia grandiflora
@@ -10312,7 +10312,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.155">
-        <name>Cluster 4 Area 155</name>
+        <name>Area155:680 obs</name>
         <description>51 Centaurea cyanus
 40 Lomatium columbianum
 38 Eriogonum compositum
@@ -10324,7 +10324,7 @@
 19 Quercus garryana
 19 Vicia villosa
 
- Cluster standouts:
+ Cluster4standouts:
 2.49 Castilleja hispida
 2.48 Hydrophyllum capitatum
 2.16 Lomatium columbianum
@@ -10378,7 +10378,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.156">
-        <name>Cluster 7 Area 156</name>
+        <name>Area156:321 obs</name>
         <description>38 Sceloporus occidentalis
 33 Ericameria nauseosa
 29 Odocoileus hemionus
@@ -10390,7 +10390,7 @@
 9 Fritillaria pudica
 8 Purshia tridentata
 
- Cluster standouts:
+ Cluster7standouts:
 2.21 Sceloporus occidentalis
 2.20 Lomatium nudicaule
 2.00 Eriogonum compositum
@@ -10444,7 +10444,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.157">
-        <name>Cluster 4 Area 157</name>
+        <name>Area157:38 obs</name>
         <description>7 Eschscholzia californica
 4 Phacelia hastata
 3 Lomatium columbianum
@@ -10456,7 +10456,7 @@
 1 Andricus quercuscalifornicus
 1 Ensatina eschscholtzii
 
- Cluster standouts:
+ Cluster4standouts:
 2.49 Castilleja hispida
 2.48 Hydrophyllum capitatum
 2.16 Lomatium columbianum
@@ -10512,7 +10512,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.158">
-        <name>Cluster 4 Area 158</name>
+        <name>Area158:93 obs</name>
         <description>8 Hydrophyllum capitatum
 7 Lomatium columbianum
 6 Adelinia grandis
@@ -10524,7 +10524,7 @@
 2 Andricus quercuscalifornicus
 2 Apocynum androsaemifolium
 
- Cluster standouts:
+ Cluster4standouts:
 2.49 Castilleja hispida
 2.48 Hydrophyllum capitatum
 2.16 Lomatium columbianum
@@ -10579,7 +10579,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.159">
-        <name>Cluster 2 Area 159</name>
+        <name>Area159:191 obs</name>
         <description>16 Lomatium klickitatense
 14 Olsynium douglasii
 12 Marah oregana
@@ -10591,7 +10591,7 @@
 5 Aphyllon uniflorum
 5 Lithophragma glabrum
 
- Cluster standouts:
+ Cluster2standouts:
 2.35 Olsynium douglasii
 2.21 Centaurea cyanus
 2.14 Triteleia grandiflora
@@ -10644,7 +10644,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.160">
-        <name>Cluster 2 Area 160</name>
+        <name>Area160:125 obs</name>
         <description>10 Lomatium klickitatense
 7 Lithophragma parviflorum
 6 Olsynium douglasii
@@ -10656,7 +10656,7 @@
 5 Lomatium columbianum
 5 Pinus ponderosa
 
- Cluster standouts:
+ Cluster2standouts:
 2.35 Olsynium douglasii
 2.21 Centaurea cyanus
 2.14 Triteleia grandiflora
@@ -10714,7 +10714,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.161">
-        <name>Cluster 4 Area 161</name>
+        <name>Area161:204 obs</name>
         <description>11 Lomatium columbianum
 11 Lomatium macrocarpum
 7 Adelinia grandis
@@ -10726,7 +10726,7 @@
 5 Cardamine nuttallii
 5 Delphinium nuttallianum
 
- Cluster standouts:
+ Cluster4standouts:
 2.49 Castilleja hispida
 2.48 Hydrophyllum capitatum
 2.16 Lomatium columbianum
@@ -10781,7 +10781,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.162">
-        <name>Cluster 4 Area 162</name>
+        <name>Area162:348 obs</name>
         <description>27 Lithospermum ruderale
 25 Trifolium macrocephalum
 21 Lomatium columbianum
@@ -10793,7 +10793,7 @@
 13 Lithophragma parviflorum
 11 Lomatium nudicaule
 
- Cluster standouts:
+ Cluster4standouts:
 2.49 Castilleja hispida
 2.48 Hydrophyllum capitatum
 2.16 Lomatium columbianum
@@ -10850,7 +10850,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.163">
-        <name>Cluster 2 Area 163</name>
+        <name>Area163:427 obs</name>
         <description>36 Lomatium klickitatense
 33 Olsynium douglasii
 28 Centaurea cyanus
@@ -10862,7 +10862,7 @@
 15 Eschscholzia californica
 14 Aphyllon uniflorum
 
- Cluster standouts:
+ Cluster2standouts:
 2.35 Olsynium douglasii
 2.21 Centaurea cyanus
 2.14 Triteleia grandiflora
@@ -10918,7 +10918,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.164">
-        <name>Cluster 2 Area 164</name>
+        <name>Area164:197 obs</name>
         <description>16 Trifolium macrocephalum
 11 Adelinia grandis
 11 Lomatium columbianum
@@ -10930,7 +10930,7 @@
 6 Lomatium klickitatense
 6 Quercus garryana
 
- Cluster standouts:
+ Cluster2standouts:
 2.35 Olsynium douglasii
 2.21 Centaurea cyanus
 2.14 Triteleia grandiflora
@@ -10984,7 +10984,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.165">
-        <name>Cluster 2 Area 165</name>
+        <name>Area165:116 obs</name>
         <description>16 Adelinia grandis
 8 Olsynium douglasii
 6 Lomatium macrocarpum
@@ -10996,7 +10996,7 @@
 3 Crocidium multicaule
 3 Erythronium grandiflorum
 
- Cluster standouts:
+ Cluster2standouts:
 2.35 Olsynium douglasii
 2.21 Centaurea cyanus
 2.14 Triteleia grandiflora
@@ -11049,7 +11049,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.166">
-        <name>Cluster 2 Area 166</name>
+        <name>Area166:271 obs</name>
         <description>23 Olsynium douglasii
 17 Lewisia rediviva
 12 Marah oregana
@@ -11061,7 +11061,7 @@
 8 Fritillaria pudica
 8 Pinus ponderosa
 
- Cluster standouts:
+ Cluster2standouts:
 2.35 Olsynium douglasii
 2.21 Centaurea cyanus
 2.14 Triteleia grandiflora
@@ -11118,7 +11118,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.167">
-        <name>Cluster 2 Area 167</name>
+        <name>Area167:420 obs</name>
         <description>38 Lewisia rediviva
 34 Lomatium klickitatense
 18 Olsynium douglasii
@@ -11130,7 +11130,7 @@
 13 Adelinia grandis
 13 Lithophragma parviflorum
 
- Cluster standouts:
+ Cluster2standouts:
 2.35 Olsynium douglasii
 2.21 Centaurea cyanus
 2.14 Triteleia grandiflora
@@ -11184,7 +11184,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.168">
-        <name>Cluster 4 Area 168</name>
+        <name>Area168:95 obs</name>
         <description>8 Erynnis propertius
 8 Limenitis lorquini
 6 Cardamine nuttallii
@@ -11196,7 +11196,7 @@
 3 Lathyrus latifolius
 3 Lithophragma glabrum
 
- Cluster standouts:
+ Cluster4standouts:
 2.49 Castilleja hispida
 2.48 Hydrophyllum capitatum
 2.16 Lomatium columbianum
@@ -11250,7 +11250,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.169">
-        <name>Cluster 4 Area 169</name>
+        <name>Area169:695 obs</name>
         <description>48 Collinsia grandiflora
 45 Lomatium columbianum
 40 Trifolium macrocephalum
@@ -11262,7 +11262,7 @@
 24 Erythronium grandiflorum
 23 Delphinium nuttallianum
 
- Cluster standouts:
+ Cluster4standouts:
 2.49 Castilleja hispida
 2.48 Hydrophyllum capitatum
 2.16 Lomatium columbianum
@@ -11316,7 +11316,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.170">
-        <name>Cluster 2 Area 170</name>
+        <name>Area170:252 obs</name>
         <description>23 Fritillaria affinis
 17 Dicentra cucullaria
 15 Lomatium klickitatense
@@ -11328,7 +11328,7 @@
 8 Triteleia grandiflora
 7 Erythranthe alsinoides
 
- Cluster standouts:
+ Cluster2standouts:
 2.35 Olsynium douglasii
 2.21 Centaurea cyanus
 2.14 Triteleia grandiflora
@@ -11382,7 +11382,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.171">
-        <name>Cluster 2 Area 171</name>
+        <name>Area171:120 obs</name>
         <description>21 Triteleia grandiflora
 12 Lewisia rediviva
 9 Centaurea cyanus
@@ -11394,7 +11394,7 @@
 4 Aphelocoma californica
 4 Marah oregana
 
- Cluster standouts:
+ Cluster2standouts:
 2.35 Olsynium douglasii
 2.21 Centaurea cyanus
 2.14 Triteleia grandiflora
@@ -11447,7 +11447,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.172">
-        <name>Cluster 2 Area 172</name>
+        <name>Area172:587 obs</name>
         <description>71 Crocidium multicaule
 50 Lewisia rediviva
 38 Valeriana congesta
@@ -11459,7 +11459,7 @@
 19 Triteleia grandiflora
 18 Delphinium nuttallianum
 
- Cluster standouts:
+ Cluster2standouts:
 2.35 Olsynium douglasii
 2.21 Centaurea cyanus
 2.14 Triteleia grandiflora
@@ -11514,7 +11514,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.173">
-        <name>Cluster 4 Area 173</name>
+        <name>Area173:251 obs</name>
         <description>18 Quercus garryana
 8 Eriogonum compositum
 8 Eschscholzia californica
@@ -11526,7 +11526,7 @@
 6 Collinsia parviflora
 6 Lomatium klickitatense
 
- Cluster standouts:
+ Cluster4standouts:
 2.49 Castilleja hispida
 2.48 Hydrophyllum capitatum
 2.16 Lomatium columbianum
@@ -11584,7 +11584,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.174">
-        <name>Cluster 4 Area 174</name>
+        <name>Area174:695 obs</name>
         <description>40 Olsynium douglasii
 38 Quercus garryana
 37 Lomatium columbianum
@@ -11596,7 +11596,7 @@
 21 Delphinium nuttallianum
 21 Eriogonum compositum
 
- Cluster standouts:
+ Cluster4standouts:
 2.49 Castilleja hispida
 2.48 Hydrophyllum capitatum
 2.16 Lomatium columbianum
@@ -11653,7 +11653,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.175">
-        <name>Cluster 2 Area 175</name>
+        <name>Area175:253 obs</name>
         <description>44 Lomatium columbianum
 18 Lomatium macrocarpum
 17 Fritillaria pudica
@@ -11665,7 +11665,7 @@
 7 Eriogonum compositum
 7 Lithophragma glabrum
 
- Cluster standouts:
+ Cluster2standouts:
 2.35 Olsynium douglasii
 2.21 Centaurea cyanus
 2.14 Triteleia grandiflora
@@ -11720,7 +11720,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.176">
-        <name>Cluster 2 Area 176</name>
+        <name>Area176:69 obs</name>
         <description>7 Lomatium klickitatense
 6 Quercus garryana
 6 Triteleia grandiflora
@@ -11732,7 +11732,7 @@
 2 Allium acuminatum
 2 Aphelocoma californica
 
- Cluster standouts:
+ Cluster2standouts:
 2.35 Olsynium douglasii
 2.21 Centaurea cyanus
 2.14 Triteleia grandiflora
@@ -11785,7 +11785,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.177">
-        <name>Cluster 4 Area 177</name>
+        <name>Area177:258 obs</name>
         <description>19 Lomatium macrocarpum
 15 Lomatium nudicaule
 10 Triteleia grandiflora
@@ -11797,7 +11797,7 @@
 7 Microsteris gracilis
 7 Pinus ponderosa
 
- Cluster standouts:
+ Cluster4standouts:
 2.49 Castilleja hispida
 2.48 Hydrophyllum capitatum
 2.16 Lomatium columbianum
@@ -11853,7 +11853,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.178">
-        <name>Cluster 4 Area 178</name>
+        <name>Area178:347 obs</name>
         <description>26 Fritillaria affinis
 21 Castilleja hispida
 19 Hydrophyllum capitatum
@@ -11865,7 +11865,7 @@
 10 Erythronium grandiflorum
 10 Mahonia aquifolium
 
- Cluster standouts:
+ Cluster4standouts:
 2.49 Castilleja hispida
 2.48 Hydrophyllum capitatum
 2.16 Lomatium columbianum
@@ -11920,7 +11920,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.179">
-        <name>Cluster 2 Area 179</name>
+        <name>Area179:251 obs</name>
         <description>15 Eriogonum compositum
 15 Olsynium douglasii
 14 Centaurea cyanus
@@ -11932,7 +11932,7 @@
 9 Pinus ponderosa
 9 Quercus garryana
 
- Cluster standouts:
+ Cluster2standouts:
 2.35 Olsynium douglasii
 2.21 Centaurea cyanus
 2.14 Triteleia grandiflora
@@ -11986,7 +11986,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.180">
-        <name>Cluster 4 Area 180</name>
+        <name>Area180:253 obs</name>
         <description>26 Castilleja hispida
 17 Delphinium nuttallianum
 17 Hydrophyllum capitatum
@@ -11998,7 +11998,7 @@
 8 Cardamine nuttallii
 8 Fritillaria affinis
 
- Cluster standouts:
+ Cluster4standouts:
 2.49 Castilleja hispida
 2.48 Hydrophyllum capitatum
 2.16 Lomatium columbianum
@@ -12053,7 +12053,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.181">
-        <name>Cluster 4 Area 181</name>
+        <name>Area181:137 obs</name>
         <description>32 Lomatium klickitatense
 15 Lomatium nudicaule
 8 Vicia villosa
@@ -12065,7 +12065,7 @@
 3 Buteo jamaicensis
 3 Delphinium nuttallianum
 
- Cluster standouts:
+ Cluster4standouts:
 2.49 Castilleja hispida
 2.48 Hydrophyllum capitatum
 2.16 Lomatium columbianum
@@ -12118,7 +12118,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.182">
-        <name>Cluster 2 Area 182</name>
+        <name>Area182:697 obs</name>
         <description>64 Lomatium columbianum
 63 Olsynium douglasii
 45 Centaurea cyanus
@@ -12130,7 +12130,7 @@
 27 Crocidium multicaule
 21 Achillea millefolium
 
- Cluster standouts:
+ Cluster2standouts:
 2.35 Olsynium douglasii
 2.21 Centaurea cyanus
 2.14 Triteleia grandiflora
@@ -12184,7 +12184,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.183">
-        <name>Cluster 4 Area 183</name>
+        <name>Area183:325 obs</name>
         <description>32 Lomatium columbianum
 22 Erythronium grandiflorum
 21 Cardamine nuttallii
@@ -12196,7 +12196,7 @@
 11 Hydrophyllum capitatum
 11 Lomatium triternatum
 
- Cluster standouts:
+ Cluster4standouts:
 2.49 Castilleja hispida
 2.48 Hydrophyllum capitatum
 2.16 Lomatium columbianum
@@ -12250,7 +12250,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.184">
-        <name>Cluster 4 Area 184</name>
+        <name>Area184:411 obs</name>
         <description>74 Lomatium columbianum
 27 Eriogonum compositum
 17 Centaurea cyanus
@@ -12262,7 +12262,7 @@
 13 Eriophyllum lanatum
 12 Fritillaria pudica
 
- Cluster standouts:
+ Cluster4standouts:
 2.49 Castilleja hispida
 2.48 Hydrophyllum capitatum
 2.16 Lomatium columbianum
@@ -12316,7 +12316,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.185">
-        <name>Cluster 4 Area 185</name>
+        <name>Area185:694 obs</name>
         <description>49 Lomatium columbianum
 30 Lomatium papilioniferum
 29 Triteleia grandiflora
@@ -12328,7 +12328,7 @@
 20 Lithospermum ruderale
 18 Toxicodendron diversilobum
 
- Cluster standouts:
+ Cluster4standouts:
 2.49 Castilleja hispida
 2.48 Hydrophyllum capitatum
 2.16 Lomatium columbianum
@@ -12383,7 +12383,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.186">
-        <name>Cluster 4 Area 186</name>
+        <name>Area186:476 obs</name>
         <description>44 Lomatium columbianum
 43 Lomatium nudicaule
 36 Vicia villosa
@@ -12395,7 +12395,7 @@
 15 Collomia grandiflora
 14 Triteleia grandiflora
 
- Cluster standouts:
+ Cluster4standouts:
 2.49 Castilleja hispida
 2.48 Hydrophyllum capitatum
 2.16 Lomatium columbianum
@@ -12450,7 +12450,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.187">
-        <name>Cluster 7 Area 187</name>
+        <name>Area187:419 obs</name>
         <description>33 Lomatium nudicaule
 31 Ericameria nauseosa
 25 Eriogonum compositum
@@ -12462,7 +12462,7 @@
 10 Ailanthus altissima
 9 Balsamorhiza careyana
 
- Cluster standouts:
+ Cluster7standouts:
 2.21 Sceloporus occidentalis
 2.20 Lomatium nudicaule
 2.00 Eriogonum compositum
@@ -12518,7 +12518,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.188">
-        <name>Cluster 7 Area 188</name>
+        <name>Area188:493 obs</name>
         <description>54 Ailanthus altissima
 53 Lomatium nudicaule
 42 Vicia villosa
@@ -12530,7 +12530,7 @@
 15 Lomatium triternatum
 14 Purshia tridentata
 
- Cluster standouts:
+ Cluster7standouts:
 2.21 Sceloporus occidentalis
 2.20 Lomatium nudicaule
 2.00 Eriogonum compositum
@@ -12586,7 +12586,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.189">
-        <name>Cluster 4 Area 189</name>
+        <name>Area189:97 obs</name>
         <description>7 Pituophis catenifer
 5 Adelinia grandis
 5 Lomatium klickitatense
@@ -12598,7 +12598,7 @@
 2 Achillea millefolium
 2 Andricus quercuscalifornicus
 
- Cluster standouts:
+ Cluster4standouts:
 2.49 Castilleja hispida
 2.48 Hydrophyllum capitatum
 2.16 Lomatium columbianum
@@ -12653,7 +12653,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.190">
-        <name>Cluster 7 Area 190</name>
+        <name>Area190:358 obs</name>
         <description>26 Pandion haliaetus
 23 Odocoileus hemionus
 21 Ericameria nauseosa
@@ -12665,7 +12665,7 @@
 13 Melospiza melodia
 12 Purshia tridentata
 
- Cluster standouts:
+ Cluster7standouts:
 2.21 Sceloporus occidentalis
 2.20 Lomatium nudicaule
 2.00 Eriogonum compositum
@@ -12720,7 +12720,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.191">
-        <name>Cluster 7 Area 191</name>
+        <name>Area191:427 obs</name>
         <description>42 Ailanthus altissima
 29 Lomatium nudicaule
 27 Vicia villosa
@@ -12732,7 +12732,7 @@
 13 Eschscholzia californica
 12 Erodium cicutarium
 
- Cluster standouts:
+ Cluster7standouts:
 2.21 Sceloporus occidentalis
 2.20 Lomatium nudicaule
 2.00 Eriogonum compositum
@@ -12785,7 +12785,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.192">
-        <name>Cluster 7 Area 192</name>
+        <name>Area192:189 obs</name>
         <description>13 Pinus ponderosa
 12 Eriogonum compositum
 12 Purshia tridentata
@@ -12797,7 +12797,7 @@
 8 Sceloporus occidentalis
 7 Quercus garryana
 
- Cluster standouts:
+ Cluster7standouts:
 2.21 Sceloporus occidentalis
 2.20 Lomatium nudicaule
 2.00 Eriogonum compositum
@@ -12852,7 +12852,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.193">
-        <name>Cluster 4 Area 193</name>
+        <name>Area193:195 obs</name>
         <description>11 Erynnis propertius
 8 Papilio zelicaon
 7 Ceanothus integerrimus
@@ -12864,7 +12864,7 @@
 6 Lomatium macrocarpum
 5 Papilio rutulus
 
- Cluster standouts:
+ Cluster4standouts:
 2.49 Castilleja hispida
 2.48 Hydrophyllum capitatum
 2.16 Lomatium columbianum
@@ -12919,7 +12919,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.194">
-        <name>Cluster 7 Area 194</name>
+        <name>Area194:75 obs</name>
         <description>8 Marah oregana
 7 Lomatium klickitatense
 4 Lomatium macrocarpum
@@ -12931,7 +12931,7 @@
 3 Lomatium nudicaule
 3 Olsynium douglasii
 
- Cluster standouts:
+ Cluster7standouts:
 2.21 Sceloporus occidentalis
 2.20 Lomatium nudicaule
 2.00 Eriogonum compositum
@@ -12986,7 +12986,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.195">
-        <name>Cluster 7 Area 195</name>
+        <name>Area195:97 obs</name>
         <description>10 Ericameria nauseosa
 6 Eriogonum niveum
 6 Lomatium nudicaule
@@ -12998,7 +12998,7 @@
 3 Lomatium macrocarpum
 3 Phacelia hastata
 
- Cluster standouts:
+ Cluster7standouts:
 2.21 Sceloporus occidentalis
 2.20 Lomatium nudicaule
 2.00 Eriogonum compositum
@@ -13051,7 +13051,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.196">
-        <name>Cluster 4 Area 196</name>
+        <name>Area196:377 obs</name>
         <description>31 Trifolium macrocephalum
 19 Lomatium macrocarpum
 19 Triteleia grandiflora
@@ -13063,7 +13063,7 @@
 14 Eriogonum compositum
 14 Frasera albicaulis
 
- Cluster standouts:
+ Cluster4standouts:
 2.49 Castilleja hispida
 2.48 Hydrophyllum capitatum
 2.16 Lomatium columbianum
@@ -13116,7 +13116,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.197">
-        <name>Cluster 7 Area 197</name>
+        <name>Area197:431 obs</name>
         <description>31 Lomatium papilioniferum
 30 Eriogonum compositum
 22 Marah oregana
@@ -13128,7 +13128,7 @@
 12 Erodium cicutarium
 11 Crocidium multicaule
 
- Cluster standouts:
+ Cluster7standouts:
 2.21 Sceloporus occidentalis
 2.20 Lomatium nudicaule
 2.00 Eriogonum compositum
@@ -13183,7 +13183,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.198">
-        <name>Cluster 4 Area 198</name>
+        <name>Area198:65 obs</name>
         <description>7 Lomatium klickitatense
 6 Pituophis catenifer
 4 Lomatium columbianum
@@ -13195,7 +13195,7 @@
 3 Thamnophis sirtalis
 2 Asclepias fascicularis
 
- Cluster standouts:
+ Cluster4standouts:
 2.49 Castilleja hispida
 2.48 Hydrophyllum capitatum
 2.16 Lomatium columbianum
@@ -13249,7 +13249,7 @@
         </Polygon>
       </Placemark>
       <Placemark id="mthood.199">
-        <name>Cluster 7 Area 199</name>
+        <name>Area199:21 obs</name>
         <description>4 Ericameria nauseosa
 2 Lomatium nudicaule
 2 Purshia tridentata
@@ -13261,7 +13261,7 @@
 1 Dipsacus fullonum
 1 Eriogonum compositum
 
- Cluster standouts:
+ Cluster7standouts:
 2.21 Sceloporus occidentalis
 2.20 Lomatium nudicaule
 2.00 Eriogonum compositum
