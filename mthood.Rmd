@@ -216,18 +216,20 @@ tri.tooltips <- tri.full %>%
 
 # Details about each area
 
-```{r kmeans_interactive, eval=FALSE}
+```{r kmeans_interactive}
 (ggplot(tri.tooltips) + geom_sf_interactive(aes(fill=cluster, tooltip=description), linewidth=0.5, color="grey40") + 
   theme_void() + scale_fill_manual(values=pal, guide="none")) %>% girafe()
 ```
 
 ```{r kmeans_leaflet}
-leaflet(tri.tooltips %>% mutate(description = str_replace_all(description, "\n", "<br>"))) %>% 
+tri.tooltips %>% 
+  mutate(description = map(str_replace_all(description, "\n", "<br>"), htmltools::HTML)) %>% 
+  leaflet() %>% 
   addTiles(urlTemplate = "https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png") %>%
   addPolygons(weight = 2, color = "grey", opacity = 0.8,
-    fillColor = ~unname(pal[cluster]), fillOpacity = 0.5,
-    highlightOptions = highlightOptions(weight = 3, color = "white", fillOpacity = 0.7, bringToFront = TRUE),
-    popup = ~description)
+              fillColor = ~unname(pal[cluster]), fillOpacity = 0.5,
+              highlightOptions = highlightOptions(weight = 3, color = "white", fillOpacity = 0.7, bringToFront = TRUE),
+              label = ~description)
 ```
 
 # Photos of the most common species
